@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Algorithms.Tests.Codility
+namespace Algorithms.Tests.Codility.Exams
 {
     [TestClass]
     public class GameOfLettersTests

@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Algorithms.Tests.Codility
+namespace Algorithms.Tests.Codility.Exams
 {
     [TestClass]
     public class SumOfArrayTests
     {
-       
+
         [TestMethod]
         [DataRow(4)]
         [DataRow(3)]
