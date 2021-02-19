@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Algorithms.Codility.BinaryGap
+namespace Algorithms.Codility.Iterations.BinaryGap
 {
     public static class BinaryConverter
     {

@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Algorithms.Codility.GameOfLetters
+namespace Algorithms.Codility.Exams.GameOfLetters
 {
     [MemoryDiagnoser]
     public class GameOfLetters
@@ -144,8 +144,8 @@ namespace Algorithms.Codility.GameOfLetters
             }
 
             // Copy the message length to a new array, to remove trailing \0
-            char[] output = new char[i+1];
-            Array.Copy(word, output, i+1);
+            char[] output = new char[i + 1];
+            Array.Copy(word, output, i + 1);
 
 
             return string.Join("", output);

@@ -13,7 +13,7 @@ namespace Algorithms.Tests.Codility
         [DataRow("bytdag", new[] { 4, 3, 0, 1, 2, 5 }, "bat")]
         public void FirstTry(string S, int[] A, string expected)
         {
-            var solution = new Algorithms.Codility.GameOfLetters.GameOfLetters();
+            var solution = new Algorithms.Codility.Exams.GameOfLetters.GameOfLetters();
             var actual = solution.FirstTry(S, A);
 
             Assert.AreEqual(expected, actual);
@@ -24,7 +24,7 @@ namespace Algorithms.Tests.Codility
         [DataRow("bytdag", new[] { 4, 3, 0, 1, 2, 5 }, "bat")]
         public void SecondTry(string S, int[] A, string expected)
         {
-            var solution = new Algorithms.Codility.GameOfLetters.GameOfLetters();
+            var solution = new Algorithms.Codility.Exams.GameOfLetters.GameOfLetters();
             var actual = solution.SecondTry(S, A);
 
             Assert.AreEqual(expected, actual);
@@ -35,7 +35,7 @@ namespace Algorithms.Tests.Codility
         [DataRow("bytdag", new[] { 4, 3, 0, 1, 2, 5 }, "bat")]
         public void ThirdTry(string S, int[] A, string expected)
         {
-            var solution = new Algorithms.Codility.GameOfLetters.GameOfLetters();
+            var solution = new Algorithms.Codility.Exams.GameOfLetters.GameOfLetters();
             var actual = solution.ThirdTry(S, A);
 
             Assert.AreEqual(expected, actual);
@@ -47,7 +47,7 @@ namespace Algorithms.Tests.Codility
         [DataRow("bytdag", new[] { 4, 3, 0, 1, 2, 5 }, "bat")]
         public void FourthTry(string S, int[] A, string expected)
         {
-            var solution = new Algorithms.Codility.GameOfLetters.GameOfLetters();
+            var solution = new Algorithms.Codility.Exams.GameOfLetters.GameOfLetters();
             var actual = solution.FourthTry(S, A);
 
             Assert.AreEqual(expected, actual);

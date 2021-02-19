@@ -19,7 +19,7 @@ namespace Algorithms.Tests.Codility
         [DataRow(20)]
         public void FirstTry_Tests(int N)
         {
-            var solution = new Algorithms.Codility.SumOfArray.SumOfArray();
+            var solution = new Algorithms.Codility.Exams.SumOfArray.SumOfArray();
 
             var result = solution.FirstTry(N);
 
@@ -39,7 +39,7 @@ namespace Algorithms.Tests.Codility
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void FirstTry_OutOfRange_Tests(int N)
         {
-            var solution = new Algorithms.Codility.SumOfArray.SumOfArray();
+            var solution = new Algorithms.Codility.Exams.SumOfArray.SumOfArray();
             var result = solution.FirstTry(N);
         }
     }

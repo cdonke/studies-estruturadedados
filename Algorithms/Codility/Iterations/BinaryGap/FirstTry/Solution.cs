@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace Algorithms.Codility.BinaryGap.FirstTry
+namespace Algorithms.Codility.Iterations.BinaryGap.FirstTry
 {
     [MemoryDiagnoser]
     public class Solution

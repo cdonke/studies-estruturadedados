@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Algorithms.Codility.SumOfArray
+namespace Algorithms.Codility.Exams.SumOfArray
 {
     [MemoryDiagnoser]
     public class SumOfArray
@@ -40,7 +40,7 @@ namespace Algorithms.Codility.SumOfArray
                     // If sum < 0, adds a positive number
                     // N*2 grants that you may have a wider range of numbers to sum/subtract. 
                     // This way, the sum is balanced all along the way
-                    number = random.Next(0, N*2) * (sum < 0 ? 1 : -1);
+                    number = random.Next(0, N * 2) * (sum < 0 ? 1 : -1);
                 }
                 // Since its needed to be unique numbers, it's required to verify whether the number exists already
                 while (isContained(result, number));

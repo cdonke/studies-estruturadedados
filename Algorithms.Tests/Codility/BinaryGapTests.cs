@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Algorithms.Codility.Iterations.BinaryGap;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -23,7 +24,7 @@ namespace Algorithms.Tests.Codility
 
         public void FirstTry(int N, int expected)
         {
-            var solution = new Algorithms.Codility.BinaryGap.FirstTry.Solution();
+            var solution = new Algorithms.Codility.Iterations.BinaryGap.FirstTry.Solution();
             var actual = solution.solution(N);
 
             Assert.AreEqual(expected, actual);
@@ -35,7 +36,7 @@ namespace Algorithms.Tests.Codility
         [DataRow(172, "10101100")]
         public void BinaryConverter_Tests(int N, string expected)
         {
-            var bin = Algorithms.Codility.BinaryGap.BinaryConverter.Convert(N);
+            var bin = BinaryConverter.Convert(N);
 
             var actual = new StringBuilder(bin.Count);
             while (bin.Count > 0)
