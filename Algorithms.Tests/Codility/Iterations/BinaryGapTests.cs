@@ -24,11 +24,34 @@ namespace Algorithms.Tests.Codility.Iterations
 
         public void FirstTry(int N, int expected)
         {
-            var solution = new Algorithms.Codility.Iterations.BinaryGap.FirstTry.Solution();
-            var actual = solution.solution(N);
+            var solution = new Algorithms.Codility.Iterations.BinaryGap.BinaryGap();
+            var actual = solution.FirstTry(N);
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        [DataRow(9, 2)] //1001
+        [DataRow(529, 4)] //1000010001
+        [DataRow(20, 1)] //10100 
+
+        [DataRow(1, 0)] //0001 
+        [DataRow(2, 0)] //0010 
+        [DataRow(147, 2)] //1001 0011 
+        [DataRow(483, 3)] //1 1110 0011
+        [DataRow(647, 4)] //10 1000 0111 
+
+        [DataRow(32, 0)] //10 0000
+
+        public void SecondTry(int N, int expected)
+        {
+            var solution = new Algorithms.Codility.Iterations.BinaryGap.BinaryGap();
+            var actual = solution.SecondTry(N);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+
 
         [TestMethod]
         [DataRow(9, "1001")]
