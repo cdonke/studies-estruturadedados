@@ -6,7 +6,7 @@ using System.Text;
 namespace Algorithms.Codility.Arrays.CyclicRotation
 {
     [MemoryDiagnoser]
-    public class Solution
+    public class CyclicRotation
     {
         [Benchmark]
         [Arguments(new int[] { 3, 8, 9, 7, 6 }, 3)]

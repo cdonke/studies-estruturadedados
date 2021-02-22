@@ -14,7 +14,7 @@ namespace Algorithms.Tests.Codility.Arrays
         [DataRow(new int[] { 1, 2, 3, 4 }, 4, new int[] { 1, 2, 3, 4 })]
         public void FirstTry(int[] A, int K, int[] expected)
         {
-            var solution = new Algorithms.Codility.Arrays.CyclicRotation.Solution();
+            var solution = new Algorithms.Codility.Arrays.CyclicRotation.CyclicRotation();
             var actual = solution.FirstTry(A, K);
 
             CollectionAssert.AreEqual(expected, actual);
