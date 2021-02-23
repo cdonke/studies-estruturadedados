@@ -51,7 +51,8 @@ Write an efficient algorithm for the following assumptions:
 - each element of array A is an integer within the range [−1,000..1,000].
 
 # Results
-https://app.codility.com/demo/results/trainingNXSD2K-KQW/
+- [First Try](https://app.codility.com/demo/results/trainingNXSD2K-KQW/)
+- [Second Try](https://app.codility.com/demo/results/trainingRRN428-VGA/)
 
 
 # Benchmark
