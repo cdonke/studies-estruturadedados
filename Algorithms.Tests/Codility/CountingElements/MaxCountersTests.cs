@@ -10,6 +10,7 @@ namespace Algorithms.Tests.Codility.CountingElements
     {
         [TestMethod]
         [DataRow(5, new int[] { 3, 4, 4, 6, 1, 4, 4 }, new int[] { 3, 2, 2, 4, 2 })]
+        [DataRow(5, new int[] { 1, 2, 3, 4, 5, 1, 1, 1, 1, 1, 1, 1, 1, 6, 6, 6, 6, 6, 6 }, new int[] { 9, 9, 9, 9, 9 })]
         public void FirstTry(int N, int[] A, int[] expected)
         {
             var solution = new Algorithms.Codility.CountingElements.MaxCounters.MaxCounters();
@@ -21,6 +22,7 @@ namespace Algorithms.Tests.Codility.CountingElements
 
         [TestMethod]
         [DataRow(5, new int[] { 3, 4, 4, 6, 1, 4, 4 }, new int[] { 3, 2, 2, 4, 2 })]
+        [DataRow(5, new int[] { 1, 2, 3, 4, 5, 1, 1, 1, 1, 1, 1, 1, 1, 6, 6, 6, 6, 6, 6 }, new int[] { 9, 9, 9, 9, 9 })]
         public void SecondTry(int N, int[] A, int[] expected)
         {
             var solution = new Algorithms.Codility.CountingElements.MaxCounters.MaxCounters();
@@ -32,6 +34,7 @@ namespace Algorithms.Tests.Codility.CountingElements
 
         [TestMethod]
         [DataRow(5, new int[] { 3, 4, 4, 6, 1, 4, 4 }, new int[] { 3, 2, 2, 4, 2 })]
+        [DataRow(5, new int[] { 1, 2, 3, 4, 5, 1, 1, 1, 1, 1, 1, 1, 1, 6, 6, 6, 6, 6, 6 }, new int[] { 9, 9, 9, 9, 9 })]
         public void ThirdTry(int N, int[] A, int[] expected)
         {
             var solution = new Algorithms.Codility.CountingElements.MaxCounters.MaxCounters();
@@ -43,7 +46,7 @@ namespace Algorithms.Tests.Codility.CountingElements
 
 
         [TestMethod]
-        //[DataRow(5, new int[] { 3, 4, 4, 6, 1, 4, 4 }, new int[] { 3, 2, 2, 4, 2 })]
+        [DataRow(5, new int[] { 3, 4, 4, 6, 1, 4, 4 }, new int[] { 3, 2, 2, 4, 2 })]
         [DataRow(5, new int[] { 1, 2, 3, 4, 5, 1, 1, 1, 1, 1, 1, 1, 1, 6, 6, 6, 6, 6, 6 }, new int[] { 9, 9, 9, 9, 9 })]
         public void FourthTry(int N, int[] A, int[] expected)
         {
