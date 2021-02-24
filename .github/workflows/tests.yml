@@ -36,8 +36,20 @@ jobs:
         persist-credentials: false
         
     - name: Test
-      run: dotnet test --verbosity normal ./Algorithms.Tests    
-  
+      run: dotnet test --verbosity normal --logger "liquid.md" ./Algorithms.Tests    
+    
+    - name: Copy result files
+      run: cp -f ./Algorithms.Tests/TestResults/*.md ./TestResults/UnitTests
+      
+    - name: Push results to repo
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+        git add ./TestResults/
+        git commit -m "Updating Unit Tests"
+        git push
+        
   benchmark:
     runs-on: ubuntu-latest
     steps:
@@ -51,11 +63,14 @@ jobs:
     - name: Run Benchmark
       run: dotnet run --configuration Release --all --artifacts ./Algorithms/BenchmarkDotNet.Artifacts --project ./Algorithms
       
+    - name: Copy result files
+      run: cp -f ./Algorithms/BenchmarkDotNet.Artifacts/results/*.md ./TestResults/Benchmark
+      
     - name: Push results to repo
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-        git add .Algorithms/BenchmarkDotNet.Artifacts/results/*.md
+        git add ./TestResults/
         git commit -m "Updating Benchmarks"
         git push
