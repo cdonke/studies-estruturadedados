@@ -8,6 +8,8 @@ using System.Text;
 namespace Algorithms.Sorting
 {
     [MemoryDiagnoser]
+    [KeepBenchmarkFiles]
+    [MarkdownExporterAttribute.GitHub]
     public class InsertionSort
     {
         private IEnumerable<int[]> _valores = new[] { Helpers.CriarAleatoriosUnicos(50000) };

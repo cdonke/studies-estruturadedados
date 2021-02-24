@@ -6,6 +6,8 @@ using System.Text;
 namespace Algorithms.Hashtables
 {
     [MemoryDiagnoser]
+    [KeepBenchmarkFiles]
+    [MarkdownExporterAttribute.GitHub]
     public class HashTable<T>
     {
         private readonly int _tamanho;

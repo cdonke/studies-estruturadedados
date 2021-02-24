@@ -1,4 +1,5 @@
 ﻿using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Exporters;
 using Microsoft.Diagnostics.Tracing.Parsers.IIS_Trace;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,8 @@ using System.Text;
 namespace Algorithms.Codility.Arrays.OddOccurrencesInArray
 {
     [MemoryDiagnoser]
+    [KeepBenchmarkFiles]
+    [MarkdownExporterAttribute.GitHub]
     public class OddOccurrencesInArray
     {
         public object[] data() =>

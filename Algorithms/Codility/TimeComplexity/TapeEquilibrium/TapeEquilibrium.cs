@@ -6,6 +6,8 @@ using System.Text;
 namespace Algorithms.Codility.TimeComplexity.TapeEquilibrium
 {
     [MemoryDiagnoser]
+    [KeepBenchmarkFiles]
+    [MarkdownExporterAttribute.GitHub]
     public class TapeEquilibrium
     {
         public object[] data() =>

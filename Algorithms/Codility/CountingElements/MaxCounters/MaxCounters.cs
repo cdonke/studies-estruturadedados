@@ -8,6 +8,8 @@ using System.Text;
 namespace Algorithms.Codility.CountingElements.MaxCounters
 {
     [MemoryDiagnoser]
+    [KeepBenchmarkFiles]
+    [MarkdownExporterAttribute.GitHub]
     public class MaxCounters
     {
         public IEnumerable<object[]> data()

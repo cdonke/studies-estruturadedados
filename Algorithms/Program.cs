@@ -9,7 +9,10 @@ namespace Algorithms
         [ExcludeFromCodeCoverage]
         static void Main(string[] args)
         {
-            BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args);
+            if (args.Length > 0 && args[0] == "--all")
+                BenchmarkRunner.Run(typeof(Program).Assembly);
+            else
+                BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args);
         }
     }
 }

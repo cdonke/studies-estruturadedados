@@ -6,6 +6,8 @@ using System.Text;
 namespace Algorithms.Codility.Exams.SumOfArray
 {
     [MemoryDiagnoser]
+    [KeepBenchmarkFiles]
+    [MarkdownExporterAttribute.GitHub]
     public class SumOfArray
     {
         [Benchmark(Description = "Sum of Array equals 0")]

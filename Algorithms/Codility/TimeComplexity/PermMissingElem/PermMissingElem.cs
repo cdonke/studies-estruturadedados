@@ -7,6 +7,8 @@ using System.Text;
 namespace Algorithms.Codility.TimeComplexity.PermMissingElem
 {
     [MemoryDiagnoser]
+    [KeepBenchmarkFiles]
+    [MarkdownExporterAttribute.GitHub]
     public class PermMissingElem
     {
         public object[] data()

@@ -6,6 +6,8 @@ using System.Text;
 namespace Algorithms.Codility.Arrays.CyclicRotation
 {
     [MemoryDiagnoser]
+    [KeepBenchmarkFiles]
+    [MarkdownExporterAttribute.GitHub]
     public class CyclicRotation
     {
         [Benchmark]

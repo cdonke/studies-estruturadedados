@@ -6,6 +6,8 @@ using System.Text;
 namespace Algorithms.Sorting
 {
     [MemoryDiagnoser]
+    [KeepBenchmarkFiles]
+    [MarkdownExporterAttribute.GitHub]
     public class BubbleSort
     {
         [Benchmark]

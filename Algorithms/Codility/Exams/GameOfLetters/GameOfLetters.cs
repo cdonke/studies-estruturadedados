@@ -7,6 +7,8 @@ using System.Text;
 namespace Algorithms.Codility.Exams.GameOfLetters
 {
     [MemoryDiagnoser]
+    [KeepBenchmarkFiles]
+    [MarkdownExporterAttribute.GitHub]
     public class GameOfLetters
     {
         [Benchmark(Description = "First try: String.Join + Replace")]

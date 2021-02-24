@@ -7,6 +7,8 @@ using System.Text;
 namespace Algorithms.Codility.Iterations.BinaryGap
 {
     [MemoryDiagnoser]
+    [KeepBenchmarkFiles]
+    [MarkdownExporterAttribute.GitHub]
     public class BinaryGap
     {
         public int[] data() => 

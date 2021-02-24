@@ -256,3 +256,4 @@ paket-files/
 /IntermediatorBotSample/data
 /IntermediatorBotSample/Summary.html
 /IntermediatorBotSample/IntermediatorDispatch.json
+/Algorithms/BenchmarkDotNet.Artifacts/results

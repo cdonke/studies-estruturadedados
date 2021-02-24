@@ -6,6 +6,8 @@ using System.Text;
 namespace Algorithms.Codility.CountingElements.FrogRiverOne
 {
     [MemoryDiagnoser]
+    [KeepBenchmarkFiles]
+    [MarkdownExporterAttribute.GitHub]
     public class FrogRiverOne
     {
         [Benchmark]
