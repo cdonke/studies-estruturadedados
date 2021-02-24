@@ -64,7 +64,7 @@ jobs:
       run: dotnet run --configuration Release --all --artifacts ./Algorithms/BenchmarkDotNet.Artifacts --project ./Algorithms
       
     - name: Copy result files
-      run: cp -f ./Algorithms/BenchmarkDotNet.Artifacts/results/*.md ./TestResults/Benchmark
+      run: cp -f BenchmarkDotNet.Artifacts/results/*.md ./TestResults/Benchmark
       
     - name: Push results to repo
       run: |
