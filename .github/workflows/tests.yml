@@ -20,25 +20,22 @@ jobs:
         persist-credentials: false
         
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ./Algorithms
       
     - name: Build
-      run: dotnet build --no-restore --configuration Release
+      run: dotnet build --no-restore --configuration Release ./Algorithms
   
   test:
     runs-on: ubuntu-latest
     steps:
     - name: Test
-      run: dotnet test --no-build --verbosity normal
-      
-    - name: Benchmark
-      run: dotnet run --configuration Release --all
+      run: dotnet test --no-build --verbosity normal ./Algorithms.Tests    
   
   benchmark:
     runs-on: ubuntu-latest
     steps:
     - name: Run Benchmark
-      run: dotnet run --configuration Release --all --artifacts .\BenchmarkDotNet.Artifacts\
+      run: dotnet run --configuration Release --all --artifacts ./Algorithms/BenchmarkDotNet.Artifacts --project ./Algorithms
       
     - name: Push results to repo
       run: |
