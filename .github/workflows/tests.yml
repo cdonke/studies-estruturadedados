@@ -28,12 +28,26 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+        persist-credentials: false
+        
     - name: Test
       run: dotnet test --no-build --verbosity normal ./Algorithms.Tests    
   
   benchmark:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+        persist-credentials: false
+        
     - name: Run Benchmark
       run: dotnet run --configuration Release --all --artifacts ./Algorithms/BenchmarkDotNet.Artifacts --project ./Algorithms
       
