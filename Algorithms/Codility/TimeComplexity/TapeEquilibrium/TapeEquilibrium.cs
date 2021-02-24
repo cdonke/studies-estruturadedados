@@ -1,6 +1,7 @@
 ﻿using BenchmarkDotNet.Attributes;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace Algorithms.Codility.TimeComplexity.TapeEquilibrium
@@ -10,6 +11,7 @@ namespace Algorithms.Codility.TimeComplexity.TapeEquilibrium
     [MarkdownExporterAttribute.GitHub]
     public class TapeEquilibrium
     {
+        [ExcludeFromCodeCoverage]
         public object[] data() =>
             new[] { new int[] { 3, 1, 2, 4, 3 } };
 

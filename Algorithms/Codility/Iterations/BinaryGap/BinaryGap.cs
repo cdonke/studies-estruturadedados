@@ -1,6 +1,7 @@
 ﻿using BenchmarkDotNet.Attributes;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -11,6 +12,7 @@ namespace Algorithms.Codility.Iterations.BinaryGap
     [MarkdownExporterAttribute.GitHub]
     public class BinaryGap
     {
+        [ExcludeFromCodeCoverage]
         public int[] data() => 
             new int[] { 1, 2, 147, 483, 647, 1041, 15, 32 };
 

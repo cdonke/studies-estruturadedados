@@ -17,9 +17,9 @@ namespace Algorithms.Codility.Arrays.CyclicRotation
         public int[] FirstTry(int[] A, int K)
         {
             if (A.Length > 100 || A.Length < 0)
-                throw new OutOfMemoryException(nameof(A));
+                throw new ArgumentOutOfRangeException(nameof(A));
             if (K > 100 || K < 0)
-                throw new OutOfMemoryException(nameof(K));
+                throw new ArgumentOutOfRangeException(nameof(K));
 
             var result = new int[A.Length];
             for (int i = 0; i < A.Length; i++)
@@ -35,9 +35,9 @@ namespace Algorithms.Codility.Arrays.CyclicRotation
         public int[] SecondTry(int[] A, int K)
         {
             if (A.Length > 100 || A.Length < 0)
-                throw new OutOfMemoryException(nameof(A));
+                throw new ArgumentOutOfRangeException(nameof(A));
             if (K > 100 || K < 0)
-                throw new OutOfMemoryException(nameof(K));
+                throw new ArgumentOutOfRangeException(nameof(K));
 
             var result = new int[A.Length];
             int nextPosition = 0;

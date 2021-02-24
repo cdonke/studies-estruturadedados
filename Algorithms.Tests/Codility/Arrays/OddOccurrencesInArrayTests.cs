@@ -10,6 +10,7 @@ namespace Algorithms.Tests.Codility.Arrays
     {
         [TestMethod]
         [DataRow(new int[] { 9, 3, 9, 3, 9, 7, 9 }, 7)]
+        [DataRow(new int[] { 9, 3, 9, 3, 9, 9 }, default(int))]
         public void FirstTry(int[] A, int expected)
         {
             var solution = new Algorithms.Codility.Arrays.OddOccurrencesInArray.OddOccurrencesInArray();
@@ -21,6 +22,7 @@ namespace Algorithms.Tests.Codility.Arrays
 
         [TestMethod]
         [DataRow(new int[] { 9, 3, 9, 3, 9, 7, 9 }, 7)]
+        [DataRow(new int[] { 9, 3, 9, 3, 9, 9 }, default(int))]
         public void SecondTry(int[] A, int expected)
         {
             var solution = new Algorithms.Codility.Arrays.OddOccurrencesInArray.OddOccurrencesInArray();

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 
@@ -12,6 +13,7 @@ namespace Algorithms.Codility.CountingElements.MaxCounters
     [MarkdownExporterAttribute.GitHub]
     public class MaxCounters
     {
+        [ExcludeFromCodeCoverage]
         public IEnumerable<object[]> data()
         {
             return new[] {
@@ -20,6 +22,7 @@ namespace Algorithms.Codility.CountingElements.MaxCounters
                 new object[] { 10_000, Enumerable.Repeat(10_001, 3000).ToArray() }
             };
         }
+        [ExcludeFromCodeCoverage]
         private int[] generateRandom(int N)
         {
             Random r = new Random();

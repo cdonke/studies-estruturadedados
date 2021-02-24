@@ -3,6 +3,7 @@ using BenchmarkDotNet.Exporters;
 using Microsoft.Diagnostics.Tracing.Parsers.IIS_Trace;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace Algorithms.Codility.Arrays.OddOccurrencesInArray
@@ -12,6 +13,7 @@ namespace Algorithms.Codility.Arrays.OddOccurrencesInArray
     [MarkdownExporterAttribute.GitHub]
     public class OddOccurrencesInArray
     {
+        [ExcludeFromCodeCoverage]
         public object[] data() =>
             new[] { new int[] { 9, 3, 9, 3, 9, 7, 9 } };
 

@@ -1,7 +1,9 @@
 ﻿using BenchmarkDotNet.Attributes;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace Algorithms.Codility.TimeComplexity.PermMissingElem
@@ -11,6 +13,7 @@ namespace Algorithms.Codility.TimeComplexity.PermMissingElem
     [MarkdownExporterAttribute.GitHub]
     public class PermMissingElem
     {
+        [ExcludeFromCodeCoverage]
         public object[] data()
         {
             var range = (from q in Enumerable.Range(1, DataLength)
@@ -20,9 +23,11 @@ namespace Algorithms.Codility.TimeComplexity.PermMissingElem
 
             return new[] { range };
         }
+        [ExcludeFromCodeCoverage]
         [Params(10_001, 12_345)]
         public int MissingValue { get; set; }
 
+        [ExcludeFromCodeCoverage]
         [Params(100_000)]
         public int DataLength { get; set; }
 

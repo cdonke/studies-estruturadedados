@@ -26,7 +26,7 @@ namespace Algorithms.Tests.Codility.TimeComplexity
         {
             var solution = new Algorithms.Codility.TimeComplexity.TapeEquilibrium.TapeEquilibrium();
 
-            var actual = solution.FirstTry(A);
+            var actual = solution.FirstTry_BitwiseAbs(A);
 
             Assert.AreEqual(expected, actual);
         }
