@@ -83,7 +83,7 @@ jobs:
         name: Benchmarks
         path: ~/benchmark-artifacts/*.md      
       
-  Publish Results:
+  Publish_Results:
     runs-on: ubuntu-latest
     needs: Benchmark
     steps:          
