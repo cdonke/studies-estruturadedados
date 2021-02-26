@@ -45,8 +45,8 @@ jobs:
       
     - name: Copy result files
       run: |
-        mkdir ~/test-artifacts
-        cp -f BenchmarkDotNet.Artifacts/results/*.md ~/test-artifacts
+        [ ! -d "~/test-artifacts" ] && mkdir ~/test-artifacts
+        cp -f ./Algorithms.Tests/TestResults/*.md ~/test-artifacts
 
     - name: Upload Results Artifact
       uses: actions/upload-artifact@v2.2.2
