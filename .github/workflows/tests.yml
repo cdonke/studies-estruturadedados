@@ -10,6 +10,7 @@ on:
 jobs:
   Build:
     runs-on: ubuntu-latest
+    if: ${{ false }}
 
     steps:
     - uses: actions/checkout@v2
@@ -29,7 +30,8 @@ jobs:
 
   Tests:
     runs-on: ubuntu-latest
-    needs: Build
+    #needs: Build
+    if: ${{ false }}
     
     steps:    
     - uses: actions/checkout@v2
@@ -56,7 +58,7 @@ jobs:
 
   Benchmark:
     runs-on: ubuntu-latest
-    needs: Tests
+    #needs: Tests
     steps:    
     - uses: actions/checkout@v2
     
@@ -66,11 +68,16 @@ jobs:
         dotnet-version: 3.1.x
         persist-credentials: false
         
-    - name: Restore Project
-      run: dotnet restore ./Algorithms
-      
+    - name: Restore and Build Project
+      run: |
+        dotnet restore ./Algorithms
+        dotnet build --no-restore --configuration Release ./Algorithms  
+              
     - name: Run Benchmark
-      run: dotnet run --configuration Release --project ./Algorithms -- --all 
+      run: | 
+        cd ./Algorithms
+        dotnet run --configuration Release -- --artifacts ../BenchmarkDotNet.Artifacts
+        cd ..
 
     - name: Copy result files
       run: |
