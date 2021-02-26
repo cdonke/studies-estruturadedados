@@ -44,7 +44,7 @@ namespace Algorithms.Sorting
         // Left Node = 2i+1
         // Right Node = 2i+2
         // Find Parent = (i-1)/2
-        [Benchmark]
+        //[Benchmark]
         [ArgumentsSource(nameof(Data))]
         public int[] Sort(int[] A)
         {
