@@ -1,4 +1,4 @@
-name: .NET
+name: Unit Tests and Benchmark
 
 on:
   push:
@@ -7,40 +7,108 @@ on:
     branches: [ master ]
   workflow_dispatch:
 
+env:
+  dotnetVersion: 3.1.x
+    
 jobs:
-  tests:
+  Build:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET
+    - name: Setup .NET and Checkout
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.x
+        dotnet-version: $dotnetVersion
         persist-credentials: false
         
     - name: Restore dependencies
       run: dotnet restore ./Algorithms      
     - name: Build
-      run: dotnet build --no-restore --configuration Release ./Algorithms
-  
+      run: dotnet build --no-restore --configuration Release ./Algorithms  
 
 
+  Tests:
+    runs-on: ubuntu-latest
+    needs: Build
+    
+    steps:    
+    - uses: actions/checkout@v2
+    - name: Setup .NET and Checkout
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: $dotnetVersion
+        persist-credentials: false
+        
     - name: Test
       run: dotnet test --verbosity normal --logger "liquid.md" ./Algorithms.Tests    
-
-
-    
-    - name: Run Benchmark
-      run: dotnet run --configuration Release --all --artifacts ./Algorithms/BenchmarkDotNet.Artifacts --project ./Algorithms
-      
-      
-      
       
     - name: Copy result files
       run: |
-        cp -f BenchmarkDotNet.Artifacts/results/*.md ./TestResults/Benchmark
-        cp -f ./Algorithms.Tests/TestResults/*.md ./TestResults/UnitTests
+        mkdir ~/test-artifacts
+        cp -f BenchmarkDotNet.Artifacts/results/*.md ~/test-artifacts
+
+    - name: Upload Results Artifact
+      uses: actions/upload-artifact@v2.2.2
+      with:       
+        name: Unit Tests
+        path: ~/test-artifacts/*.md
+
+  Benchmark:
+    runs-on: ubuntu-latest
+    needs: Tests
+    steps:    
+    - uses: actions/checkout@v2
+    - name: Setup .NET and Checkout
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: $dotnetVersion
+        persist-credentials: false
+        
+    - name: Run Benchmark
+      run: dotnet run --configuration Release --all --artifacts ./Algorithms/BenchmarkDotNet.Artifacts --project ./Algorithms
+
+    - name: Copy result files
+      run: |
+        mkdir ~/benchmark-artifacts
+        cp -f BenchmarkDotNet.Artifacts/results/*.md ~/benchmark-artifacts
+        
+    - name: Upload Results Artifact
+      uses: actions/upload-artifact@v2.2.2
+      with:       
+        name: Benchmarks
+        path: ~/benchmark-artifacts/*.md      
+      
+  Publish Results:
+    runs-on: ubuntu-latest
+    needs: Benchmark
+    steps:          
+    - uses: actions/download-artifact@v2
+    - name: Download benchmarks artifacts
+      with:
+        name: Benchmarks
+        path: ~/artifacts/benchmark
+    
+    - uses: actions/download-artifact@v2
+    - name: Download unit tests artifacts
+      with:
+        name: Unit Tests
+        path: ~/artifacts/UnitTests
+
+    - uses: actions/checkout@v2
+    - name: Setup .NET and Checkout
+      with:
+        persist-credentials: false
+        
+    - name: Copy raw files
+      run: |
+        cp -f ~/artifacts/benchmark ./TestResults/Benchmark	        
+        cp -f ~/artifacts/UnitTests ./TestResults/UnitTests 
+        
+    - name: Merge benchmarks with READMEs
+      run: |
+        cd ./TestResults/Benchmark
+        ./merge.sh
         
     - name: Push results to repo
       run: |
@@ -48,5 +116,5 @@ jobs:
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
         git add ./TestResults/ -f
-        git commit -m "Updating Tests and Benchmarks"
+        git commit -m "Updating READMEs"
         git push
