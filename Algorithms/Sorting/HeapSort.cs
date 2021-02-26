@@ -18,23 +18,25 @@ namespace Algorithms.Sorting
     {
         #region Data
         [ExcludeFromCodeCoverage]
-        private object[] GenerateData(int N, int min, int max)
+        private int[] GenerateData(int N, int min, int max)
         {
             Random r = new Random();
             HashSet<int> range = new HashSet<int>();
             for (int i = 0; i < N || range.Count < N; i++)
                 range.Add(r.Next(min, max));
 
-            return new object[] { range.OrderBy(q => r.Next()).ToArray() };
+            return range.OrderBy(q => r.Next()).ToArray();
         }
         [ExcludeFromCodeCoverage]
-        public IEnumerable<object[]> Data() => new[] {
-            GenerateData(10, 0, 100),
-            GenerateData(50, -100, 100),
-            GenerateData(10_000, -10_000, 10_000),
-            GenerateData(100_000, -100_000, 100_000),
-            GenerateData(1_000_000, -1_000_000, 1_000_000)
-        };
+        public IEnumerable<object[]> Data()
+        {
+            yield return new object[] { GenerateData(10, 0, 100) };
+            yield return new object[] { GenerateData(50, -100, 100), };
+            yield return new object[] { GenerateData(10_000, -10_000, 10_000), };
+            yield return new object[] { GenerateData(100_000, -100_000, 100_000), };
+            yield return new object[] { GenerateData(1_000_000, -1_000_000, 1_000_000) };
+
+        }
         #endregion
 
         // Root = 0
