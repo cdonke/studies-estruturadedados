@@ -7,3 +7,5 @@ Given:
 
 Every time a player join the game, he is added to a K[] list.
 He is noted as the k-th player, and his index is added to A[] as he plays.
+
+# Benchmark

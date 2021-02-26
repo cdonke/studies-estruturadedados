@@ -5,3 +5,6 @@ Given:
 
 
 Create an array of size N, where the sum of its elements is 0 and they are unique.
+
+
+# Benchmark
