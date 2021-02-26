@@ -66,8 +66,11 @@ jobs:
         dotnet-version: 3.1.x
         persist-credentials: false
         
+    - name: Restore Project
+      run: dotnet restore --project ./Algorithms
+      
     - name: Run Benchmark
-      run: dotnet run --configuration Release --all --artifacts ./Algorithms/BenchmarkDotNet.Artifacts --project ./Algorithms
+      run: dotnet run --configuration Release --project ./Algorithms -- --all 
 
     - name: Copy result files
       run: |
