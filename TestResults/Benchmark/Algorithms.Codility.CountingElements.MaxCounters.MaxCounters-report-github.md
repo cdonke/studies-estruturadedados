@@ -3,35 +3,22 @@
 BenchmarkDotNet=v0.12.1, OS=ubuntu 18.04
 Intel Xeon CPU E5-2673 v3 2.40GHz, 1 CPU, 2 logical and 2 physical cores
 .NET Core SDK=3.1.406
-  [Host] : .NET Core 3.1.12 (CoreCLR 4.700.21.6504, CoreFX 4.700.21.6905), X64 RyuJIT
+  [Host]     : .NET Core 3.1.12 (CoreCLR 4.700.21.6504, CoreFX 4.700.21.6905), X64 RyuJIT
+  DefaultJob : .NET Core 3.1.12 (CoreCLR 4.700.21.6504, CoreFX 4.700.21.6905), X64 RyuJIT
 
 
 ```
-|    Method |     N |            A | Mean | Error |
-|---------- |------ |------------- |-----:|------:|
-|  **FirstTry** |     **5** | **Int32[10000]** |   **NA** |    **NA** |
-| SecondTry |     5 | Int32[10000] |   NA |    NA |
-|  ThirdTry |     5 | Int32[10000] |   NA |    NA |
-| FourthTry |     5 | Int32[10000] |   NA |    NA |
-|  **FirstTry** | **10000** | **Int32[10000]** |   **NA** |    **NA** |
-| SecondTry | 10000 | Int32[10000] |   NA |    NA |
-|  ThirdTry | 10000 | Int32[10000] |   NA |    NA |
-| FourthTry | 10000 | Int32[10000] |   NA |    NA |
-|  **FirstTry** | **10000** |  **Int32[3000]** |   **NA** |    **NA** |
-| SecondTry | 10000 |  Int32[3000] |   NA |    NA |
-|  ThirdTry | 10000 |  Int32[3000] |   NA |    NA |
-| FourthTry | 10000 |  Int32[3000] |   NA |    NA |
-
-Benchmarks with issues:
-  MaxCounters.FirstTry: DefaultJob [N=5, A=Int32[10000]]
-  MaxCounters.SecondTry: DefaultJob [N=5, A=Int32[10000]]
-  MaxCounters.ThirdTry: DefaultJob [N=5, A=Int32[10000]]
-  MaxCounters.FourthTry: DefaultJob [N=5, A=Int32[10000]]
-  MaxCounters.FirstTry: DefaultJob [N=10000, A=Int32[10000]]
-  MaxCounters.SecondTry: DefaultJob [N=10000, A=Int32[10000]]
-  MaxCounters.ThirdTry: DefaultJob [N=10000, A=Int32[10000]]
-  MaxCounters.FourthTry: DefaultJob [N=10000, A=Int32[10000]]
-  MaxCounters.FirstTry: DefaultJob [N=10000, A=Int32[3000]]
-  MaxCounters.SecondTry: DefaultJob [N=10000, A=Int32[3000]]
-  MaxCounters.ThirdTry: DefaultJob [N=10000, A=Int32[3000]]
-  MaxCounters.FourthTry: DefaultJob [N=10000, A=Int32[3000]]
+|    Method |     N |            A |         Mean |      Error |     StdDev |  Gen 0 |  Gen 1 | Gen 2 | Allocated |
+|---------- |------ |------------- |-------------:|-----------:|-----------:|-------:|-------:|------:|----------:|
+|  **FirstTry** |     **5** | **Int32[10000]** |     **44.00 μs** |   **0.769 μs** |   **0.755 μs** |      **-** |      **-** |     **-** |      **48 B** |
+| SecondTry |     5 | Int32[10000] |     43.28 μs |   0.620 μs |   0.580 μs |      - |      - |     - |      48 B |
+|  ThirdTry |     5 | Int32[10000] |     31.55 μs |   0.579 μs |   0.541 μs |      - |      - |     - |      49 B |
+| FourthTry |     5 | Int32[10000] |     31.67 μs |   0.594 μs |   0.636 μs |      - |      - |     - |      48 B |
+|  **FirstTry** | **10000** | **Int32[10000]** |     **22.56 μs** |   **0.432 μs** |   **0.424 μs** | **2.5330** | **0.3052** |     **-** |   **40024 B** |
+| SecondTry | 10000 | Int32[10000] |     25.68 μs |   0.512 μs |   0.479 μs | 2.5330 | 0.3052 |     - |   40024 B |
+|  ThirdTry | 10000 | Int32[10000] |     47.07 μs |   0.916 μs |   1.454 μs | 2.5024 | 0.3052 |     - |   40024 B |
+| FourthTry | 10000 | Int32[10000] |     47.52 μs |   0.946 μs |   1.327 μs | 2.5024 | 0.3052 |     - |   40024 B |
+|  **FirstTry** | **10000** |  **Int32[3000]** | **21,913.30 μs** | **363.777 μs** | **340.278 μs** |      **-** |      **-** |     **-** |   **40330 B** |
+| SecondTry | 10000 |  Int32[3000] | 21,944.09 μs | 427.355 μs | 399.748 μs |      - |      - |     - |   40044 B |
+|  ThirdTry | 10000 |  Int32[3000] |     12.03 μs |   0.239 μs |   0.294 μs | 2.5330 | 0.3052 |     - |   40024 B |
+| FourthTry | 10000 |  Int32[3000] |     11.95 μs |   0.236 μs |   0.299 μs | 2.5330 | 0.3052 |     - |   40024 B |

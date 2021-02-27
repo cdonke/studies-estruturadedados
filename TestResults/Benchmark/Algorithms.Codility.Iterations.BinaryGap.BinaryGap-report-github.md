@@ -3,43 +3,26 @@
 BenchmarkDotNet=v0.12.1, OS=ubuntu 18.04
 Intel Xeon CPU E5-2673 v3 2.40GHz, 1 CPU, 2 logical and 2 physical cores
 .NET Core SDK=3.1.406
-  [Host] : .NET Core 3.1.12 (CoreCLR 4.700.21.6504, CoreFX 4.700.21.6905), X64 RyuJIT
+  [Host]     : .NET Core 3.1.12 (CoreCLR 4.700.21.6504, CoreFX 4.700.21.6905), X64 RyuJIT
+  DefaultJob : .NET Core 3.1.12 (CoreCLR 4.700.21.6504, CoreFX 4.700.21.6905), X64 RyuJIT
 
 
 ```
-|    Method |    N | Mean | Error |
-|---------- |----- |-----:|------:|
-|  **FirstTry** |    **1** |   **NA** |    **NA** |
-| SecondTry |    1 |   NA |    NA |
-|  **FirstTry** |    **2** |   **NA** |    **NA** |
-| SecondTry |    2 |   NA |    NA |
-|  **FirstTry** |   **15** |   **NA** |    **NA** |
-| SecondTry |   15 |   NA |    NA |
-|  **FirstTry** |   **32** |   **NA** |    **NA** |
-| SecondTry |   32 |   NA |    NA |
-|  **FirstTry** |  **147** |   **NA** |    **NA** |
-| SecondTry |  147 |   NA |    NA |
-|  **FirstTry** |  **483** |   **NA** |    **NA** |
-| SecondTry |  483 |   NA |    NA |
-|  **FirstTry** |  **647** |   **NA** |    **NA** |
-| SecondTry |  647 |   NA |    NA |
-|  **FirstTry** | **1041** |   **NA** |    **NA** |
-| SecondTry | 1041 |   NA |    NA |
-
-Benchmarks with issues:
-  BinaryGap.FirstTry: DefaultJob [N=1]
-  BinaryGap.SecondTry: DefaultJob [N=1]
-  BinaryGap.FirstTry: DefaultJob [N=2]
-  BinaryGap.SecondTry: DefaultJob [N=2]
-  BinaryGap.FirstTry: DefaultJob [N=15]
-  BinaryGap.SecondTry: DefaultJob [N=15]
-  BinaryGap.FirstTry: DefaultJob [N=32]
-  BinaryGap.SecondTry: DefaultJob [N=32]
-  BinaryGap.FirstTry: DefaultJob [N=147]
-  BinaryGap.SecondTry: DefaultJob [N=147]
-  BinaryGap.FirstTry: DefaultJob [N=483]
-  BinaryGap.SecondTry: DefaultJob [N=483]
-  BinaryGap.FirstTry: DefaultJob [N=647]
-  BinaryGap.SecondTry: DefaultJob [N=647]
-  BinaryGap.FirstTry: DefaultJob [N=1041]
-  BinaryGap.SecondTry: DefaultJob [N=1041]
+|    Method |    N |       Mean |     Error |    StdDev |  Gen 0 | Gen 1 | Gen 2 | Allocated |
+|---------- |----- |-----------:|----------:|----------:|-------:|------:|------:|----------:|
+|  **FirstTry** |    **1** |  **61.340 ns** | **1.2314 ns** | **1.3687 ns** | **0.0045** |     **-** |     **-** |      **72 B** |
+| SecondTry |    1 |   1.435 ns | 0.0562 ns | 0.0525 ns |      - |     - |     - |         - |
+|  **FirstTry** |    **2** |  **54.887 ns** | **1.0893 ns** | **0.9656 ns** | **0.0046** |     **-** |     **-** |      **72 B** |
+| SecondTry |    2 |   5.107 ns | 0.1439 ns | 0.1768 ns |      - |     - |     - |         - |
+|  **FirstTry** |   **15** |  **71.405 ns** | **1.4754 ns** | **2.2084 ns** | **0.0045** |     **-** |     **-** |      **72 B** |
+| SecondTry |   15 |   6.199 ns | 0.1256 ns | 0.1175 ns |      - |     - |     - |         - |
+|  **FirstTry** |   **32** | **130.815 ns** | **2.6262 ns** | **4.0104 ns** | **0.0081** |     **-** |     **-** |     **128 B** |
+| SecondTry |   32 |  11.574 ns | 0.2038 ns | 0.1906 ns |      - |     - |     - |         - |
+|  **FirstTry** |  **147** | **142.322 ns** | **2.8616 ns** | **5.0865 ns** | **0.0081** |     **-** |     **-** |     **128 B** |
+| SecondTry |  147 |  11.890 ns | 0.2538 ns | 0.2374 ns |      - |     - |     - |         - |
+|  **FirstTry** |  **483** | **177.396 ns** | **2.9230 ns** | **2.5912 ns** | **0.0136** |     **-** |     **-** |     **216 B** |
+| SecondTry |  483 |  18.138 ns | 0.4058 ns | 0.4983 ns |      - |     - |     - |         - |
+|  **FirstTry** |  **647** | **188.524 ns** | **3.0837 ns** | **4.3229 ns** | **0.0136** |     **-** |     **-** |     **216 B** |
+| SecondTry |  647 |  15.448 ns | 0.3434 ns | 0.4088 ns |      - |     - |     - |         - |
+|  **FirstTry** | **1041** | **199.424 ns** | **3.9849 ns** | **7.1856 ns** | **0.0136** |     **-** |     **-** |     **216 B** |
+| SecondTry | 1041 |  15.292 ns | 0.2770 ns | 0.2455 ns |      - |     - |     - |         - |

@@ -3,15 +3,12 @@
 BenchmarkDotNet=v0.12.1, OS=ubuntu 18.04
 Intel Xeon CPU E5-2673 v3 2.40GHz, 1 CPU, 2 logical and 2 physical cores
 .NET Core SDK=3.1.406
-  [Host] : .NET Core 3.1.12 (CoreCLR 4.700.21.6504, CoreFX 4.700.21.6905), X64 RyuJIT
+  [Host]     : .NET Core 3.1.12 (CoreCLR 4.700.21.6504, CoreFX 4.700.21.6905), X64 RyuJIT
+  DefaultJob : .NET Core 3.1.12 (CoreCLR 4.700.21.6504, CoreFX 4.700.21.6905), X64 RyuJIT
 
 
 ```
-|      Method |  valores | Mean | Error |
-|------------ |--------- |-----:|------:|
-| SortWithAux | Int32[9] |   NA |    NA |
-| SortWithXOR | Int32[9] |   NA |    NA |
-
-Benchmarks with issues:
-  BubbleSort.SortWithAux: DefaultJob [valores=Int32[9]]
-  BubbleSort.SortWithXOR: DefaultJob [valores=Int32[9]]
+|      Method |  valores |     Mean |    Error |   StdDev | Gen 0 | Gen 1 | Gen 2 | Allocated |
+|------------ |--------- |---------:|---------:|---------:|------:|------:|------:|----------:|
+| SortWithAux | Int32[9] | 49.87 ns | 0.788 ns | 0.699 ns |     - |     - |     - |         - |
+| SortWithXOR | Int32[9] | 48.81 ns | 0.778 ns | 0.690 ns |     - |     - |     - |         - |
