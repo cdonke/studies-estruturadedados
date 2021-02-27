@@ -97,8 +97,10 @@ jobs:
     
     - name: Copy raw files
       run: |
-        cp -f ~/artifacts/benchmark ./TestResults/Benchmark	        
-        cp -f ~/artifacts/UnitTests ./TestResults/UnitTests 
+        ls -R ~/artifacts/benchmark
+        ls -R ~/artifacts/UnitTests
+        cp -f ~/artifacts/benchmark/* ./TestResults/Benchmark	        
+        cp -f ~/artifacts/UnitTests/* ./TestResults/UnitTests 
         
     - name: Merge benchmarks with READMEs
       run: |
