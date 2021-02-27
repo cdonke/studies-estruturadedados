@@ -66,10 +66,7 @@ jobs:
         dotnet-version: 3.1.x
         
     - name: Run Benchmark
-      run: | 
-        cd ./Algorithms
-        dotnet run --configuration Release -- --artifacts ../BenchmarkDotNet.Artifacts
-        cd ..
+      run: dotnet run --configuration Release --project ./Algorithms -- --artifacts ../BenchmarkDotNet.Artifacts
 
     - name: Copy result files
       run: |
