@@ -30,13 +30,12 @@ namespace Algorithms.Sorting
         [ExcludeFromCodeCoverage]
         public IEnumerable<object[]> Data()
         {
-            return new[] {
-                GenerateData(10, 0, 100),
-                GenerateData(50, -100, 100),
-                GenerateData(10_000, -10_000, 10_000),
-                GenerateData(100_000, -100_000, 100_000),
-                GenerateData(1_000_000, -1_000_000, 1_000_000)
-            };
+            yield return new object[] { GenerateData(10, 0, 100) };
+            yield return new object[] { GenerateData(50, -100, 100) };
+            yield return new object[] { GenerateData(10_000, -10_000, 10_000) };
+            yield return new object[] { GenerateData(100_000, -100_000, 100_000) };
+            yield return new object[] { GenerateData(1_000_000, -1_000_000, 1_000_000) };
+
         }
         #endregion
 

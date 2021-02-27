@@ -19,7 +19,6 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.x
-        persist-credentials: false
         
     - name: Restore dependencies
       run: dotnet restore ./Algorithms      
@@ -40,7 +39,6 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.x
-        persist-credentials: false
         
     - name: Test
       run: dotnet test --verbosity normal --logger "liquid.md" ./Algorithms.Tests    
@@ -66,13 +64,7 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.x
-        persist-credentials: false
         
-    - name: Restore and Build Project
-      run: |
-        dotnet restore ./Algorithms
-        dotnet build --no-restore --configuration Release ./Algorithms  
-              
     - name: Run Benchmark
       run: | 
         cd ./Algorithms

@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms", "Algorithms.csproj", "{7CA9AD79-8822-40C5-898C-A41BE2705DF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algorithms", "Algorithms.csproj", "{7CA9AD79-8822-40C5-898C-A41BE2705DF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.Tests", "..\Algorithms.Tests\Algorithms.Tests.csproj", "{9CD80A42-052F-4D57-AAFE-B93FBC5B296B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algorithms.Tests", "..\Algorithms.Tests\Algorithms.Tests.csproj", "{9CD80A42-052F-4D57-AAFE-B93FBC5B296B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0AC63EA3-FE18-435E-BAA8-A22165E48980}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows\tests.yml = ..\.github\workflows\tests.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
