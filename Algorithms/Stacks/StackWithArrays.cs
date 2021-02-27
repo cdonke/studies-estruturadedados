@@ -9,7 +9,6 @@ namespace Algorithms.Stacks
     {
         private readonly T[] _valores;
         private readonly int _maximo;
-        private int primeiro;
         private int ultimo;
         private int total;
 
