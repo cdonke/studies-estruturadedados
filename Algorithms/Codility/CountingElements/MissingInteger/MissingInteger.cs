@@ -33,11 +33,11 @@ namespace Algorithms.Codility.CountingElements.MissingInteger
                 .Where(q => q != removed);
 
             var expected = removed;
-            if (range.Min() > 1 || range.Max() <= 0 || removed <= 0)
-                expected = 1;
-
             if (expected >= range.Max() || range.Contains(expected))
                 expected = range.Max() + 1;
+
+            if (range.Min() > 1 || range.Max() <= 0 || expected <= 0)
+                expected = 1;
 
             var arrRange = range.OrderBy(q => r.Next()).ToArray();
 
@@ -57,12 +57,12 @@ namespace Algorithms.Codility.CountingElements.MissingInteger
         public object[] Data()
         {
             return new object[] {
-                //largeData(),
+                largeData(),
                 largeDataNegativeRemoved(),
-                //negativeData(),
-                //positiveData(),
-                //positiveDataNonOne(),
-                //positiveDataNonOneHigh()
+                negativeData(),
+                positiveData(),
+                positiveDataNonOne(),
+                positiveDataNonOneHigh()
             };
         }
         #endregion
