@@ -24,8 +24,20 @@ namespace Algorithms.Tests.Sorting
             CollectionAssert.AreEqual(expected, actual);
         }
 
-        public static IEnumerable<object[]> largeData() =>
-            (new Algorithms.Sorting.HeapSort()).Data();
+        public static IEnumerable<object[]> largeData()
+        {
+            var solution = new Algorithms.Sorting.HeapSort();
+            var data = solution.Data();
+            foreach (object[] item in data)
+            {
+                var lstData = new List<int>();
+                foreach (int el in item)
+                    lstData.Add(el);
+
+                yield return new object[] { lstData.ToArray() };
+            };
+        }
+
 
         public static IEnumerable<object[]> data()
         {

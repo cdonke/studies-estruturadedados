@@ -15,7 +15,7 @@ namespace Algorithms.Codility.CountingElements.MissingInteger
     {
         #region Data
         [ExcludeFromCodeCoverage]
-        private object[] dataGenerator(int min, int max)
+        private object[] dataGenerator(int min, int max, int removed = Int32.MinValue)
         {
             Random r = new Random();
 
@@ -24,7 +24,8 @@ namespace Algorithms.Codility.CountingElements.MissingInteger
 
             var skip = r.Next(1, elements / 2);
             var take = r.Next(skip, elements - skip);
-            var removed = numbers[r.Next(skip, skip + take - 1)];
+            if (removed == Int32.MinValue)
+                removed = numbers[r.Next(skip, skip + take - 1)];
 
             var range = numbers
                 .Skip(skip)
@@ -32,8 +33,11 @@ namespace Algorithms.Codility.CountingElements.MissingInteger
                 .Where(q => q != removed);
 
             var expected = removed;
-            if (range.Min() > 1 || range.Max() <= 0 || expected <= 0)
+            if (range.Min() > 1 || range.Max() <= 0 || removed <= 0)
                 expected = 1;
+
+            if (expected >= range.Max() || range.Contains(expected))
+                expected = range.Max() + 1;
 
             var arrRange = range.OrderBy(q => r.Next()).ToArray();
 
@@ -41,6 +45,7 @@ namespace Algorithms.Codility.CountingElements.MissingInteger
         }
         [ExcludeFromCodeCoverage]
         private object[] largeData() => dataGenerator(-1_000_000, 1_000_000);
+        private object[] largeDataNegativeRemoved() => dataGenerator(-1_000, 1_000, -1);
         [ExcludeFromCodeCoverage]
         private object[] negativeData() => dataGenerator(-1_000, -1);
         [ExcludeFromCodeCoverage]
@@ -49,17 +54,20 @@ namespace Algorithms.Codility.CountingElements.MissingInteger
         private object[] positiveDataNonOne() => dataGenerator(5, 1000);
         private object[] positiveDataNonOneHigh() => dataGenerator(1000, 10_000);
         [ExcludeFromCodeCoverage]
-        public IEnumerable<object[]> Data() => new[]
+        public object[] Data()
         {
-            //largeData(),
-            negativeData(),
-            positiveData(),
-            positiveDataNonOne(),
-            positiveDataNonOneHigh()
-        };
+            return new object[] {
+                //largeData(),
+                largeDataNegativeRemoved(),
+                //negativeData(),
+                //positiveData(),
+                //positiveDataNonOne(),
+                //positiveDataNonOneHigh()
+            };
+        }
         #endregion
 
-        //[Benchmark]
+        [Benchmark]
         [ArgumentsSource(nameof(Data))]
         public int FirstTry(int[] A)
         {
@@ -97,12 +105,13 @@ namespace Algorithms.Codility.CountingElements.MissingInteger
         }
 
 
-        //[Benchmark]
+        [Benchmark]
         [ArgumentsSource(nameof(Data))]
         public int SecondTry(int[] A)
         {
             // Sort 
             Array.Sort(A);
+
 
             // Validate
             if (A[0] > 1 || A[A.Length - 1] < 0)
@@ -111,7 +120,12 @@ namespace Algorithms.Codility.CountingElements.MissingInteger
             for (int i = 1; i < A.Length; i++)
             {
                 if (A[i] != A[i - 1] && A[i] != A[i - 1] + 1)
+                {
+                    if (A[i - 1] + 1 < 1)
+                        return 1;
+
                     return A[i - 1] + 1;
+                }
             }
 
             return A[A.Length - 1] + 1;

@@ -56,6 +56,12 @@ namespace Algorithms.Tests.Codility.CountingElements
             };
         }
         public static IEnumerable<object[]> benchmarkData()
-            => (new Algorithms.Codility.CountingElements.MissingInteger.MissingInteger()).Data();
+        {
+            var solution = new Algorithms.Codility.CountingElements.MissingInteger.MissingInteger();
+            var data = solution.Data();
+
+            foreach (object[] item in data)
+                yield return item;
+        }
     }
 }
