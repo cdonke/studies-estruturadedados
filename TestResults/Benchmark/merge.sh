@@ -4,6 +4,8 @@ mergeFiles() {
   local _readme="$1"
   local _file="$2"
 
+  echo ">> Updating $_readme with $_file"
+
   CONTENT="$(sed '/Benchmark/q' $_readme)
 $(cat $_file)";
   echo "$CONTENT" > $_readme 
