@@ -4,9 +4,9 @@ mergeFiles() {
   local _readme="$1"
   local _file="$2"
 
-  CONTENT="$(sed '/Benchmark/q' $README)
-$(cat $FILE)";
-  echo "$CONTENT" > $README 
+  CONTENT="$(sed '/Benchmark/q' $_readme)
+$(cat $_file)";
+  echo "$CONTENT" > $_readme 
 }
 
 BASEPATH="../../"
@@ -30,7 +30,11 @@ do
       if [ -f "$README" ];
       then
         mergeFiles "$README" "$FILE"
+      else
+        echo "$README not found"
       fi
     fi
+  else
+    echo "$README not found"
   fi
 done
