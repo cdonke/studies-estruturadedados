@@ -9,9 +9,8 @@ Create an array of size N, where the sum of its elements is 0 and they are uniqu
 
 # Benchmark
 
-```
-**Last update:** Sun Feb 28 15:29:47 UTC 2021
-```
+**Last update:** Sun Feb 28 15:31:34 UTC 2021
+
 ``` ini
 
 BenchmarkDotNet=v0.12.1, OS=ubuntu 18.04

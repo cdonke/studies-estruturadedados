@@ -14,9 +14,8 @@ O algoritmo heapsort é um algoritmo de ordenação generalista, e faz parte da 
 
 ## Benchmark
 
-```
-**Last update:** Sun Feb 28 15:29:47 UTC 2021
-```
+**Last update:** Sun Feb 28 15:31:34 UTC 2021
+
 ``` ini
 
 BenchmarkDotNet=v0.12.1, OS=ubuntu 18.04
