@@ -1,0 +1,47 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Merge Tests
+
+# Controls when the action will run. 
+on:  
+  workflow_dispatch:
+  
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  Publish_Results:
+    runs-on: ubuntu-latest
+    steps:          
+    - uses: actions/download-artifact@v2    
+      name: Download benchmarks artifacts
+      with:
+        name: Benchmarks
+        path: ~/artifacts/benchmark
+    
+    - uses: actions/download-artifact@v2
+      name: Download unit tests artifacts
+      with:
+        name: Unit Tests
+        path: ~/artifacts/UnitTests
+
+    - uses: actions/checkout@v2
+    
+    - name: Copy raw files
+      run: |
+        ls -R ~/artifacts/benchmark
+        ls -R ~/artifacts/UnitTests
+        cp -f ~/artifacts/benchmark/* ./TestResults/Benchmark	        
+        cp -f ~/artifacts/UnitTests/* ./TestResults/UnitTests 
+        
+    - name: Merge benchmarks with READMEs
+      run: |
+        cd ./TestResults/Benchmark
+        ./merge.sh
+        
+    - name: Push results to repo
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+        git add ./TestResults/ -f
+        git commit -m "Updating READMEs"
+        git push
