@@ -10,7 +10,7 @@ mergeFiles() {
 "
   CONTENT="$CONTENT
 \`\`\`
-*Last update:* $(date -r $_file)
+**Last update:** $(date -r $_file)
 \`\`\`
 $(cat $_file)";
   echo "$CONTENT" > $_readme 
