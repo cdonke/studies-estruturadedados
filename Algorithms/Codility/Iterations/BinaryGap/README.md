@@ -23,6 +23,7 @@ Write an efficient algorithm for the following assumptions:
 https://app.codility.com/demo/results/trainingDVVF6N-MKK/
 
 # Benchmark
+
 ``` ini
 
 BenchmarkDotNet=v0.12.1, OS=ubuntu 18.04
