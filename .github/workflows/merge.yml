@@ -11,15 +11,19 @@ jobs:
   Publish_Results:
     runs-on: ubuntu-latest
     steps:          
-    - uses: actions/download-artifact@v2    
+    - uses: dawidd6/action-download-artifact@v2  
       name: Download benchmarks artifacts
       with:
+        workflow: merge.yml
+        workflow_conclusion: success
         name: Benchmarks
         path: ~/artifacts/benchmark
     
-    - uses: actions/download-artifact@v2
+    - uses: dawidd6/action-download-artifact@v2  
       name: Download unit tests artifacts
       with:
+        workflow: merge.yml
+        workflow_conclusion: success
         name: Unit Tests
         path: ~/artifacts/UnitTests
 
