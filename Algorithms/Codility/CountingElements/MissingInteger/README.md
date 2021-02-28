@@ -25,6 +25,7 @@ Write an *efficient* algorithm for the following assumptions:
 - (First try)[]
 
 # Benchmark
+
 ``` ini
 
 BenchmarkDotNet=v0.12.1, OS=ubuntu 18.04

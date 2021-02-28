@@ -49,6 +49,7 @@ Assume that:
 - In your solution, focus on correctness. The performance of your solution will not be the focus of the assessment.
 
 # Benchmark
+
 ``` ini
 
 BenchmarkDotNet=v0.12.1, OS=ubuntu 18.04

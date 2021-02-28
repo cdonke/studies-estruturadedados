@@ -53,6 +53,7 @@ Write an efficient algorithm for the following assumptions:
 https://app.codility.com/demo/results/training4XB7CF-J7C/
 
 # Benchmark
+
 ``` ini
 
 BenchmarkDotNet=v0.12.1, OS=ubuntu 18.04

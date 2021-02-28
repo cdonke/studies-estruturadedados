@@ -13,6 +13,7 @@ O algoritmo heapsort é um algoritmo de ordenação generalista, e faz parte da 
 - Melhor e pior caso: O(n log2n) é o mesmo que O(n log n)
 
 ## Benchmark
+
 ``` ini
 
 BenchmarkDotNet=v0.12.1, OS=ubuntu 18.04

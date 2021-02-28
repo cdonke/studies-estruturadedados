@@ -69,6 +69,7 @@ Write an efficient algorithm for the following assumptions:
 - [Fourth try](https://app.codility.com/demo/results/training6N86XV-7TU/)
 
 # Benchmark
+
 ``` ini
 
 BenchmarkDotNet=v0.12.1, OS=ubuntu 18.04

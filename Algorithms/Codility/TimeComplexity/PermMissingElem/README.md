@@ -32,6 +32,7 @@ Write an *efficient* algorithm for the following assumptions:
 # Results
 
 # Benchmark
+
 ``` ini
 
 BenchmarkDotNet=v0.12.1, OS=ubuntu 18.04
