@@ -7,9 +7,11 @@ mergeFiles() {
   echo ">> Updating $_readme with $_file"
 
   CONTENT="$(sed '/Benchmark/q' $_readme)
-```
-\*Last Update:\* $(date -r $_file)
-```
+"
+  CONTENT="$CONTENT
+\`\`\`
+*Last update:* $(date -r $_file)
+\`\`\`
 $(cat $_file)";
   echo "$CONTENT" > $_readme 
 }
