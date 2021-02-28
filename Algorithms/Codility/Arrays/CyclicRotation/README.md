@@ -50,6 +50,9 @@ Assume that:
 
 # Benchmark
 
+```
+*Last update:* Sun Feb 28 15:27:55 UTC 2021
+```
 ``` ini
 
 BenchmarkDotNet=v0.12.1, OS=ubuntu 18.04
