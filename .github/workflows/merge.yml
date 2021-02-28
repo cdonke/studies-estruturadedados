@@ -5,7 +5,10 @@ name: Merge Tests
 # Controls when the action will run. 
 on:  
   workflow_dispatch:
-  
+ 
+env:
+  run_id: 606247475
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   Publish_Results:
@@ -16,6 +19,7 @@ jobs:
       with:
         workflow: merge.yml
         workflow_conclusion: success
+        run_id: $run_id
         name: Benchmarks
         path: ~/artifacts/benchmark
     
@@ -24,6 +28,7 @@ jobs:
       with:
         workflow: merge.yml
         workflow_conclusion: success
+        run_id: $run_id
         name: Unit Tests
         path: ~/artifacts/UnitTests
 
