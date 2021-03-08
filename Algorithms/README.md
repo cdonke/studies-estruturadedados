@@ -1,43 +1,22 @@
 ﻿<style>
-.gray {
-  border: 1px solid #adadad;
-  color: black;
-  background-color: #e3e3e3;
-}
-
-.green {
-  border: 1px solid #286500;
-  color: black;
-  background-color: #53d000;
-}
-
-.yellow-green {
-  border: 1px solid #286500;
-  color: black;
-  background-color: #C8EA00;
-}
-
-.yellow {
-  border: 1px solid #6f6e00;
-  color: black;
-  background-color: yellow;
-}
-
-.orange {
-  border: 1px solid #b20000;
-  color: black;
-  background-color: #FFC543;
-}
-
-.red {
-  border: 1px solid #b20000;
-  color: black;
-  background-color: #ff8989;
-}
+.gray { border: 1px solid #adadad; color: black; background-color: #e3e3e3; }
+.green { border: 1px solid #286500; color: black; background-color: #53d000; }
+.yellow-green { border: 1px solid #286500; color: black;  background-color: #C8EA00;}
+.yellow {border: 1px solid #6f6e00;color: black;background-color: yellow;}
+.orange {border: 1px solid #b20000;  color: black;  background-color: #FFC543;}
+.red {border: 1px solid #b20000;  color: black;  background-color: #ff8989;}
 </style>
 
+
+# Exercises lists
+- [Techie Delight](https://www.techiedelight.com/list-of-problems/)
+- [HackerRank](https://www.hackerrank.com/domains/algorithms)
+- [Codility Lessons](https://app.codility.com/programmers/lessons)
+
+*******************
+
 # Big-O Notation Cheatsheet
-## Complexity Chart
+### Complexity Chart
 
 <table id="legend" class="table">
     <tr>
@@ -52,7 +31,7 @@
 
 ![](./docs/big-o-complexity-chart.svg)
 
-## Common data structures Operations
+### Common data structures Operations
 <table class="table table-bordered table-striped">
     <tr>
       <th>Data Structure</th>
@@ -249,7 +228,7 @@
 
 
 
-## Array Sorting Algorithms
+### Array Sorting Algorithms
 <table class="table table-bordered table-striped">
     <tr>
       <th>Algorithm</th>
