@@ -10,4 +10,4 @@ Intel Xeon Platinum 8171M CPU 2.60GHz, 1 CPU, 2 logical and 2 physical cores
 ```
 |   Method | X |        A |     Mean |    Error |   StdDev |  Gen 0 | Gen 1 | Gen 2 | Allocated |
 |--------- |-- |--------- |---------:|---------:|---------:|-------:|------:|------:|----------:|
-| FirstTry | 6 | Int32[8] | 16.19 ns | 0.361 ns | 0.370 ns | 0.0017 |     - |     - |      32 B |
+| FirstTry | 6 | Int32[8] | 25.67 ns | 0.539 ns | 0.642 ns | 0.0017 |     - |     - |      32 B |

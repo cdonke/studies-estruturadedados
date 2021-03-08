@@ -10,5 +10,5 @@ Intel Xeon Platinum 8171M CPU 2.60GHz, 1 CPU, 2 logical and 2 physical cores
 ```
 |      Method |      valores |    Mean |    Error |   StdDev | Gen 0 | Gen 1 | Gen 2 | Allocated |
 |------------ |------------- |--------:|---------:|---------:|------:|------:|------:|----------:|
-| SortWithXOR | Int32[50000] | 1.838 s | 0.0185 s | 0.0164 s |     - |     - |     - |    8648 B |
-| SortWithAux | Int32[50000] | 1.847 s | 0.0222 s | 0.0208 s |     - |     - |     - |         - |
+| SortWithXOR | Int32[50000] | 2.942 s | 0.0227 s | 0.0212 s |     - |     - |     - |    8648 B |
+| SortWithAux | Int32[50000] | 2.984 s | 0.0278 s | 0.0260 s |     - |     - |     - |         - |
