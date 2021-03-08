@@ -7,8 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="BenchmarkDotNet.Artifacts\**" />
+    <Compile Remove="docs\**" />
     <Compile Remove="TestResults\**" />
+    <EmbeddedResource Remove="BenchmarkDotNet.Artifacts\**" />
+    <EmbeddedResource Remove="docs\**" />
     <EmbeddedResource Remove="TestResults\**" />
+    <None Remove="BenchmarkDotNet.Artifacts\**" />
+    <None Remove="docs\**" />
     <None Remove="TestResults\**" />
   </ItemGroup>
 
@@ -18,6 +24,10 @@
 
   <ItemGroup>
     <PackageReference Include="BenchmarkDotNet" Version="0.12.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Arrays\RemoveDuplicates\" />
   </ItemGroup>
 
 </Project>
