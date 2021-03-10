@@ -1,6 +1,7 @@
 ﻿using BenchmarkDotNet.Attributes;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace Algorithms.Arrays.RemoveDuplicates
@@ -10,6 +11,7 @@ namespace Algorithms.Arrays.RemoveDuplicates
     [MarkdownExporterAttribute.GitHub]
     public class RemoveDuplicates
     {
+        [ExcludeFromCodeCoverage]
         public IEnumerable<object> Data() => new[]
         {
             new int[] { 1, 2, 2, 6, 6, 8, 9, 10, 10 },

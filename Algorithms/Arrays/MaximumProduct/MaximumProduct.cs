@@ -1,6 +1,7 @@
 ﻿using BenchmarkDotNet.Attributes;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Text;
 
@@ -11,6 +12,7 @@ namespace Algorithms.Arrays.MaximumProduct
     [MarkdownExporterAttribute.GitHub]
     public class MaximumProduct
     {
+        [ExcludeFromCodeCoverage]
         public IEnumerable<int[]> Data()
         {
             yield return new int[] { -10, -3, 5, 6, -2 };
@@ -25,7 +27,9 @@ namespace Algorithms.Arrays.MaximumProduct
                     numbers.Add(r.Next(-1000, 1000));
 
                 var arrNumbers = numbers.ToArray();
+#if DEBUG
                 Console.WriteLine($"[{string.Join(", ", arrNumbers)}]");
+#endif
                 yield return arrNumbers;
             }
         }
