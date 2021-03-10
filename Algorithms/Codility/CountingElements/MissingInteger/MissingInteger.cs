@@ -69,6 +69,7 @@ namespace Algorithms.Codility.CountingElements.MissingInteger
 
         [Benchmark]
         [ArgumentsSource(nameof(Data))]
+        [ExcludeFromCodeCoverage]
         public int FirstTry(int[] A)
         {
             // Keep a list with the found numbers
