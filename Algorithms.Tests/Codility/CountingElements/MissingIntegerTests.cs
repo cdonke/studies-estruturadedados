@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 
@@ -16,6 +17,7 @@ namespace Algorithms.Tests.Codility.CountingElements
         [DynamicData(nameof(benchmarkData), DynamicDataSourceType.Method)]
         [DataRow(new int[] { 3 }, 1)]
         [DataRow(new int[] { 1, 2, 3 }, 4)]
+        [ExcludeFromCodeCoverage]
         public void FirstTry(int[] A, int expected)
         {
             var solution = new Algorithms.Codility.CountingElements.MissingInteger.MissingInteger();
