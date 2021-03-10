@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace Algorithms.Tests.Codility.CountingElements
@@ -11,6 +12,7 @@ namespace Algorithms.Tests.Codility.CountingElements
         // Test Disabled because the try is wrong for outliers
         //[TestMethod]
         //[DynamicData(nameof(Data), DynamicDataSourceType.Method)]
+        [ExcludeFromCodeCoverage]
         public void FirstTry(int[] A, int expected)
         {
             var solution = new Algorithms.Codility.CountingElements.PermCheck.PermCheck();

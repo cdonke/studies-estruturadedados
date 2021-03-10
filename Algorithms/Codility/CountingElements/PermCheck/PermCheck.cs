@@ -26,6 +26,7 @@ namespace Algorithms.Codility.CountingElements.PermCheck
 
         [Benchmark]
         [ArgumentsSource(nameof(Data))]
+        [ExcludeFromCodeCoverage]
         public int FirstTry(int[] A)
         {
             // Sort the array to simplify work
