@@ -7,9 +7,9 @@ Intel Xeon Platinum 8171M CPU 2.60GHz, 1 CPU, 2 logical and 2 physical cores
 
 
 ```
-|   Method | X |        A | Mean | Error |
-|--------- |-- |--------- |-----:|------:|
-| FirstTry | 6 | Int32[8] |   NA |    NA |
+|   Method |        A | Mean | Error |
+|--------- |--------- |-----:|------:|
+| FirstTry | Int32[8] |   NA |    NA |
 
 Benchmarks with issues:
-  FrogRiverOne.FirstTry: DefaultJob [X=6, A=Int32[8]]
+  FindEquilibrium.FirstTry: DefaultJob [A=Int32[8]]

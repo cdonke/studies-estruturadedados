@@ -1,13 +1,3 @@
-﻿# Exercise
-Given an integer array, find the maximum product of two integers in it.
-
-For example, consider array `{-10, -3, 5, 6, -2}`. 
-The maximum product is the `(-10, -3)` or `(5, 6)` pair.
-
-# Benchmark
-
-**Last update:** Mon Mar 15 19:23:41 UTC 2021
-
 ``` ini
 
 BenchmarkDotNet=v0.12.1, OS=ubuntu 20.04

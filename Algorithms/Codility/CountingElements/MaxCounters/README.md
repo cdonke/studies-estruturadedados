@@ -70,29 +70,42 @@ Write an efficient algorithm for the following assumptions:
 
 # Benchmark
 
-**Last update:** Mon Mar  8 13:09:01 UTC 2021
+**Last update:** Mon Mar 15 19:23:41 UTC 2021
 
 ``` ini
 
 BenchmarkDotNet=v0.12.1, OS=ubuntu 20.04
 Intel Xeon Platinum 8171M CPU 2.60GHz, 1 CPU, 2 logical and 2 physical cores
-.NET Core SDK=3.1.406
-  [Host]     : .NET Core 3.1.12 (CoreCLR 4.700.21.6504, CoreFX 4.700.21.6905), X64 RyuJIT
-  DefaultJob : .NET Core 3.1.12 (CoreCLR 4.700.21.6504, CoreFX 4.700.21.6905), X64 RyuJIT
+.NET Core SDK=3.1.407
+  [Host] : .NET Core 3.1.13 (CoreCLR 4.700.21.11102, CoreFX 4.700.21.11602), X64 RyuJIT
 
 
 ```
-|    Method |     N |            A |         Mean |      Error |     StdDev |  Gen 0 |  Gen 1 | Gen 2 | Allocated |
-|---------- |------ |------------- |-------------:|-----------:|-----------:|-------:|-------:|------:|----------:|
-|  **FirstTry** |     **5** | **Int32[10000]** |     **52.90 μs** |   **0.860 μs** |   **0.804 μs** |      **-** |      **-** |     **-** |      **49 B** |
-| SecondTry |     5 | Int32[10000] |     51.07 μs |   0.964 μs |   0.990 μs |      - |      - |     - |      48 B |
-|  ThirdTry |     5 | Int32[10000] |     37.39 μs |   0.718 μs |   0.827 μs |      - |      - |     - |      48 B |
-| FourthTry |     5 | Int32[10000] |     37.46 μs |   0.327 μs |   0.273 μs |      - |      - |     - |      48 B |
-|  **FirstTry** | **10000** | **Int32[10000]** |     **32.02 μs** |   **0.385 μs** |   **0.360 μs** | **2.0752** | **0.2441** |     **-** |   **40024 B** |
-| SecondTry | 10000 | Int32[10000] |     33.59 μs |   0.372 μs |   0.348 μs | 2.0752 | 0.2441 |     - |   40025 B |
-|  ThirdTry | 10000 | Int32[10000] |     61.18 μs |   0.814 μs |   0.762 μs | 2.0752 | 0.2441 |     - |   40024 B |
-| FourthTry | 10000 | Int32[10000] |     61.64 μs |   0.511 μs |   0.453 μs | 2.0752 | 0.2441 |     - |   40025 B |
-|  **FirstTry** | **10000** |  **Int32[3000]** | **24,112.83 μs** | **292.423 μs** | **273.533 μs** |      **-** |      **-** |     **-** |   **40026 B** |
-| SecondTry | 10000 |  Int32[3000] | 20,737.02 μs | 317.140 μs | 281.136 μs |      - |      - |     - |   40298 B |
-|  ThirdTry | 10000 |  Int32[3000] |     16.38 μs |   0.325 μs |   0.423 μs | 2.1057 | 0.2441 |     - |   40024 B |
-| FourthTry | 10000 |  Int32[3000] |     22.50 μs |   0.186 μs |   0.174 μs | 2.1057 | 0.2441 |     - |   40024 B |
+|    Method |     N |            A | Mean | Error |
+|---------- |------ |------------- |-----:|------:|
+|  **FirstTry** |     **5** | **Int32[10000]** |   **NA** |    **NA** |
+| SecondTry |     5 | Int32[10000] |   NA |    NA |
+|  ThirdTry |     5 | Int32[10000] |   NA |    NA |
+| FourthTry |     5 | Int32[10000] |   NA |    NA |
+|  **FirstTry** | **10000** | **Int32[10000]** |   **NA** |    **NA** |
+| SecondTry | 10000 | Int32[10000] |   NA |    NA |
+|  ThirdTry | 10000 | Int32[10000] |   NA |    NA |
+| FourthTry | 10000 | Int32[10000] |   NA |    NA |
+|  **FirstTry** | **10000** |  **Int32[3000]** |   **NA** |    **NA** |
+| SecondTry | 10000 |  Int32[3000] |   NA |    NA |
+|  ThirdTry | 10000 |  Int32[3000] |   NA |    NA |
+| FourthTry | 10000 |  Int32[3000] |   NA |    NA |
+
+Benchmarks with issues:
+  MaxCounters.FirstTry: DefaultJob [N=5, A=Int32[10000]]
+  MaxCounters.SecondTry: DefaultJob [N=5, A=Int32[10000]]
+  MaxCounters.ThirdTry: DefaultJob [N=5, A=Int32[10000]]
+  MaxCounters.FourthTry: DefaultJob [N=5, A=Int32[10000]]
+  MaxCounters.FirstTry: DefaultJob [N=10000, A=Int32[10000]]
+  MaxCounters.SecondTry: DefaultJob [N=10000, A=Int32[10000]]
+  MaxCounters.ThirdTry: DefaultJob [N=10000, A=Int32[10000]]
+  MaxCounters.FourthTry: DefaultJob [N=10000, A=Int32[10000]]
+  MaxCounters.FirstTry: DefaultJob [N=10000, A=Int32[3000]]
+  MaxCounters.SecondTry: DefaultJob [N=10000, A=Int32[3000]]
+  MaxCounters.ThirdTry: DefaultJob [N=10000, A=Int32[3000]]
+  MaxCounters.FourthTry: DefaultJob [N=10000, A=Int32[3000]]
