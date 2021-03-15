@@ -60,5 +60,24 @@ namespace Algorithms.Sorting
 
             return vetores;
         }
+
+        [Benchmark]
+        [ArgumentsSource(nameof(Valores))]
+        public int[] ThirdTry(int[] vetores)
+        {
+            int currentUnsorted = 0, i = 0;
+            for (int partIndex = 1; partIndex < vetores.Length; partIndex++)
+            {
+                currentUnsorted = vetores[partIndex];
+                for (i = partIndex; i > 0 && vetores[i - 1] > currentUnsorted; i--)
+                {
+                    vetores[i] = vetores[i - 1];
+                }
+
+                vetores[i] = currentUnsorted;
+            }
+
+            return vetores;
+        }
     }
 }

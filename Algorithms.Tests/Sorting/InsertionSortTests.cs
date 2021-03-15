@@ -29,6 +29,16 @@ namespace Algorithms.Tests.Sorting
         }
 
         [TestMethod]
+        [DataRow(new int[] { 25, 57, 48, Int32.MaxValue, Int32.MinValue, 37, 12, 92, 33 }, new int[] { Int32.MinValue, 12, 25, 33, 37, 48, 57, 92, Int32.MaxValue })]
+        public void ThirdTry(int[] data, int[] expected)
+        {
+            var sort = new Algorithms.Sorting.InsertionSort();
+            var actual = sort.ThirdTry(data);
+
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
         [DataRow(new int[] { 25, 57, 48, Int32.MaxValue, Int32.MinValue, 37, 12, 92, 33 })]
         public void CompareMethods(int[] data)
         {
