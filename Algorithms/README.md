@@ -15,6 +15,12 @@
 
 *******************
 
+# Stable vs Unstable
+`Stable` algorithsm are those who preserve the relative positions of duplicate elements, 
+whereas `unstable` do not preserve.
+
+It's important in case of ordering classes where the order is important, for instance ordering customers by name and then by age.
+
 # Big-O Notation Cheatsheet
 ### Complexity Chart
 
