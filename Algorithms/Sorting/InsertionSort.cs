@@ -15,7 +15,7 @@ namespace Algorithms.Sorting
         private IEnumerable<int[]> _valores = new[] { Helpers.CriarAleatoriosUnicos(50000) };
 
         [ExcludeFromCodeCoverage]
-        public IEnumerable<int[]> Valores => _valores;
+        public IEnumerable<object> Valores =>  _valores ;
 
 
         [Benchmark]

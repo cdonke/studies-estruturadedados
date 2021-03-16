@@ -20,7 +20,7 @@ namespace Algorithms.Sorting
         };
 
         [ExcludeFromCodeCoverage]
-        public IEnumerable<int[]> Valores => _valores;
+        public IEnumerable<object> Valores => _valores;
 
         [Benchmark]
         [ArgumentsSource(nameof(Valores))]
