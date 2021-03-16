@@ -54,20 +54,18 @@ namespace Algorithms.Codility.CountingElements.MissingInteger
         private object[] positiveDataNonOne() => dataGenerator(5, 1000);
         private object[] positiveDataNonOneHigh() => dataGenerator(1000, 10_000);
         [ExcludeFromCodeCoverage]
-        public object[] Data()
+        public IEnumerable<object[]> Data()
         {
-            return new object[] {
-                largeData(),
-                largeDataNegativeRemoved(),
-                negativeData(),
-                positiveData(),
-                positiveDataNonOne(),
-                positiveDataNonOneHigh()
-            };
+            yield return largeData();
+            yield return largeDataNegativeRemoved();
+            yield return negativeData();
+            yield return positiveData();
+            yield return positiveDataNonOne();
+            yield return positiveDataNonOneHigh();
         }
         #endregion
 
-        //[Benchmark]
+        [Benchmark]
         [ArgumentsSource(nameof(Data))]
         [ExcludeFromCodeCoverage]
         public int FirstTry(int[] A)
@@ -106,7 +104,7 @@ namespace Algorithms.Codility.CountingElements.MissingInteger
         }
 
 
-        //[Benchmark]
+        [Benchmark]
         [ArgumentsSource(nameof(Data))]
         public int SecondTry(int[] A)
         {
