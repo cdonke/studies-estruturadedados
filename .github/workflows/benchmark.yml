@@ -15,8 +15,4 @@ jobs:
         dotnet-version: 3.1.x
         
     - name: Run Benchmark
-      run: |
-        cd ./Algorithms
-        dotnet restore
-        dotnet build --no-restore
-        dotnet run --configuration Release -- --artifacts ../BenchmarkDotNet.Artifacts/ --info --stopOnFirstError
+      run: dotnet run --configuration Release --project ./Algorithms/ -- --artifacts ./BenchmarkDotNet.Artifacts/ --info --stopOnFirstError
