@@ -18,19 +18,19 @@ namespace Algorithms.Sorting
     {
         #region Data
         [ExcludeFromCodeCoverage]
-        private object[] GenerateData(int N, int min, int max)
+        private int[] GenerateData(int N, int min, int max)
         {
             Random r = new Random();
             HashSet<int> range = new HashSet<int>();
             for (int i = 0; i < N || range.Count < N; i++)
                 range.Add(r.Next(min, max));
 
-            return range.OrderBy(q => r.Next()).Select(q => (object)q).ToArray();
+            return range.OrderBy(q => r.Next()).ToArray();
         }
         [ExcludeFromCodeCoverage]
-        public object[] Data()
+        public IEnumerable<int[]> Data()
         {
-            return new object[] {
+            return new[] {
                 GenerateData(10, 0, 100),
                 GenerateData(50, -100, 100),
                 GenerateData(10_000, -10_000, 10_000) ,
