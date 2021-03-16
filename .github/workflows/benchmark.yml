@@ -1,0 +1,22 @@
+name: Benchmark
+
+on:
+  workflow_dispatch:
+
+jobs:
+  Benchmark:
+    runs-on: ubuntu-latest
+    steps:    
+    - uses: actions/checkout@v2
+    
+    - name: Setup .NET and Checkout
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.x
+        
+    - name: Run Benchmark
+      run: |
+        cd ./Algorithms
+        dotnet restore
+        dotnet build --no-restore
+        dotnet run --configuration Release -- --artifacts ../BenchmarkDotNet.Artifacts/ --info --stopOnFirstError
