@@ -10,7 +10,7 @@ namespace Algorithms.Arrays.FindTheSum
     [MarkdownExporterAttribute.GitHub]
     public class FindTheSum
     {
-        public IEnumerable<object> Data()
+        public IEnumerable<object[]> Data()
         {
             yield return new object[] { new int[] { 8, 7, 2, 5, 3, 1 }, 10 };
         }
