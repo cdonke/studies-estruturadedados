@@ -28,7 +28,7 @@ namespace Algorithms.Tests.Sorting
         {
             var solution = new Algorithms.Sorting.HeapSort();
             var data = solution.Data();
-            foreach (object[] item in data)
+            foreach (int[] item in data)
             {
                 var lstData = new List<int>();
                 foreach (int el in item)
