@@ -24,33 +24,50 @@ https://app.codility.com/demo/results/trainingDVVF6N-MKK/
 
 # Benchmark
 
-**Last update:** Mon Mar  8 13:09:01 UTC 2021
+**Last update:** Mon Mar 15 19:23:41 UTC 2021
 
 ``` ini
 
 BenchmarkDotNet=v0.12.1, OS=ubuntu 20.04
 Intel Xeon Platinum 8171M CPU 2.60GHz, 1 CPU, 2 logical and 2 physical cores
-.NET Core SDK=3.1.406
-  [Host]     : .NET Core 3.1.12 (CoreCLR 4.700.21.6504, CoreFX 4.700.21.6905), X64 RyuJIT
-  DefaultJob : .NET Core 3.1.12 (CoreCLR 4.700.21.6504, CoreFX 4.700.21.6905), X64 RyuJIT
+.NET Core SDK=3.1.407
+  [Host] : .NET Core 3.1.13 (CoreCLR 4.700.21.11102, CoreFX 4.700.21.11602), X64 RyuJIT
 
 
 ```
-|    Method |    N |       Mean |     Error |    StdDev |  Gen 0 | Gen 1 | Gen 2 | Allocated |
-|---------- |----- |-----------:|----------:|----------:|-------:|------:|------:|----------:|
-|  **FirstTry** |    **1** |  **57.329 ns** | **0.5945 ns** | **0.5270 ns** | **0.0038** |     **-** |     **-** |      **72 B** |
-| SecondTry |    1 |   1.262 ns | 0.0383 ns | 0.0340 ns |      - |     - |     - |         - |
-|  **FirstTry** |    **2** |  **65.724 ns** | **0.8377 ns** | **0.7836 ns** | **0.0038** |     **-** |     **-** |      **72 B** |
-| SecondTry |    2 |   3.869 ns | 0.0772 ns | 0.0722 ns |      - |     - |     - |         - |
-|  **FirstTry** |   **15** |  **84.578 ns** | **0.8197 ns** | **0.7266 ns** | **0.0038** |     **-** |     **-** |      **72 B** |
-| SecondTry |   15 |   7.136 ns | 0.0598 ns | 0.0531 ns |      - |     - |     - |         - |
-|  **FirstTry** |   **32** | **138.754 ns** | **1.8432 ns** | **1.7242 ns** | **0.0067** |     **-** |     **-** |     **128 B** |
-| SecondTry |   32 |   9.570 ns | 0.1525 ns | 0.1426 ns |      - |     - |     - |         - |
-|  **FirstTry** |  **147** | **158.674 ns** | **1.3066 ns** | **1.2222 ns** | **0.0067** |     **-** |     **-** |     **128 B** |
-| SecondTry |  147 |  14.367 ns | 0.1102 ns | 0.0921 ns |      - |     - |     - |         - |
-|  **FirstTry** |  **483** | **213.155 ns** | **3.2446 ns** | **3.0350 ns** | **0.0114** |     **-** |     **-** |     **216 B** |
-| SecondTry |  483 |  16.250 ns | 0.2041 ns | 0.1910 ns |      - |     - |     - |         - |
-|  **FirstTry** |  **647** | **218.726 ns** | **3.0806 ns** | **2.8816 ns** | **0.0114** |     **-** |     **-** |     **216 B** |
-| SecondTry |  647 |  18.035 ns | 0.0770 ns | 0.0720 ns |      - |     - |     - |         - |
-|  **FirstTry** | **1041** | **228.485 ns** | **1.6605 ns** | **1.5532 ns** | **0.0114** |     **-** |     **-** |     **216 B** |
-| SecondTry | 1041 |  17.788 ns | 0.2217 ns | 0.2074 ns |      - |     - |     - |         - |
+|    Method |    N | Mean | Error |
+|---------- |----- |-----:|------:|
+|  **FirstTry** |    **1** |   **NA** |    **NA** |
+| SecondTry |    1 |   NA |    NA |
+|  **FirstTry** |    **2** |   **NA** |    **NA** |
+| SecondTry |    2 |   NA |    NA |
+|  **FirstTry** |   **15** |   **NA** |    **NA** |
+| SecondTry |   15 |   NA |    NA |
+|  **FirstTry** |   **32** |   **NA** |    **NA** |
+| SecondTry |   32 |   NA |    NA |
+|  **FirstTry** |  **147** |   **NA** |    **NA** |
+| SecondTry |  147 |   NA |    NA |
+|  **FirstTry** |  **483** |   **NA** |    **NA** |
+| SecondTry |  483 |   NA |    NA |
+|  **FirstTry** |  **647** |   **NA** |    **NA** |
+| SecondTry |  647 |   NA |    NA |
+|  **FirstTry** | **1041** |   **NA** |    **NA** |
+| SecondTry | 1041 |   NA |    NA |
+
+Benchmarks with issues:
+  BinaryGap.FirstTry: DefaultJob [N=1]
+  BinaryGap.SecondTry: DefaultJob [N=1]
+  BinaryGap.FirstTry: DefaultJob [N=2]
+  BinaryGap.SecondTry: DefaultJob [N=2]
+  BinaryGap.FirstTry: DefaultJob [N=15]
+  BinaryGap.SecondTry: DefaultJob [N=15]
+  BinaryGap.FirstTry: DefaultJob [N=32]
+  BinaryGap.SecondTry: DefaultJob [N=32]
+  BinaryGap.FirstTry: DefaultJob [N=147]
+  BinaryGap.SecondTry: DefaultJob [N=147]
+  BinaryGap.FirstTry: DefaultJob [N=483]
+  BinaryGap.SecondTry: DefaultJob [N=483]
+  BinaryGap.FirstTry: DefaultJob [N=647]
+  BinaryGap.SecondTry: DefaultJob [N=647]
+  BinaryGap.FirstTry: DefaultJob [N=1041]
+  BinaryGap.SecondTry: DefaultJob [N=1041]
