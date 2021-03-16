@@ -9,7 +9,7 @@ Create an array of size N, where the sum of its elements is 0 and they are uniqu
 
 # Benchmark
 
-**Last update:** Mon Mar 15 19:23:41 UTC 2021
+**Last update:** Tue Mar 16 12:06:48 UTC 2021
 
 ``` ini
 

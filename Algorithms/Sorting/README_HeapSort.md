@@ -14,7 +14,7 @@ O algoritmo heapsort é um algoritmo de ordenação generalista, e faz parte da 
 
 ## Benchmark
 
-**Last update:** Mon Mar 15 19:23:41 UTC 2021
+**Last update:** Tue Mar 16 12:06:48 UTC 2021
 
 ``` ini
 
@@ -25,17 +25,17 @@ Intel Xeon Platinum 8171M CPU 2.60GHz, 1 CPU, 2 logical and 2 physical cores
 
 
 ```
-| Method |               A | Mean | Error |
-|------- |---------------- |-----:|------:|
-|   **Sort** | **Object[1000000]** |   **NA** |    **NA** |
-|   **Sort** |  **Object[100000]** |   **NA** |    **NA** |
-|   **Sort** |   **Object[10000]** |   **NA** |    **NA** |
-|   **Sort** |      **Object[10]** |   **NA** |    **NA** |
-|   **Sort** |      **Object[50]** |   **NA** |    **NA** |
+| Method |              A | Mean | Error |
+|------- |--------------- |-----:|------:|
+|   **Sort** | **Int32[1000000]** |   **NA** |    **NA** |
+|   **Sort** |  **Int32[100000]** |   **NA** |    **NA** |
+|   **Sort** |   **Int32[10000]** |   **NA** |    **NA** |
+|   **Sort** |      **Int32[10]** |   **NA** |    **NA** |
+|   **Sort** |      **Int32[50]** |   **NA** |    **NA** |
 
 Benchmarks with issues:
-  HeapSort.Sort: DefaultJob [A=Object[1000000]]
-  HeapSort.Sort: DefaultJob [A=Object[100000]]
-  HeapSort.Sort: DefaultJob [A=Object[10000]]
-  HeapSort.Sort: DefaultJob [A=Object[10]]
-  HeapSort.Sort: DefaultJob [A=Object[50]]
+  HeapSort.Sort: DefaultJob [A=Int32[1000000]]
+  HeapSort.Sort: DefaultJob [A=Int32[100000]]
+  HeapSort.Sort: DefaultJob [A=Int32[10000]]
+  HeapSort.Sort: DefaultJob [A=Int32[10]]
+  HeapSort.Sort: DefaultJob [A=Int32[50]]
