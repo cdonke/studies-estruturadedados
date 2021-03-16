@@ -73,7 +73,7 @@ jobs:
     - name: Copy result files
       run: |
         mkdir ~/benchmark-artifacts
-        cp -f ../BenchmarkDotNet.Artifacts/results/*.md ~/benchmark-artifacts
+        cp -f ./BenchmarkDotNet.Artifacts/results/*.md ~/benchmark-artifacts
         
     - name: Upload Results Artifact
       uses: actions/upload-artifact@v2.2.2
