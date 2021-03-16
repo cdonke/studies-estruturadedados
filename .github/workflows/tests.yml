@@ -53,7 +53,7 @@ jobs:
         path: ~/test-artifacts/*.md
 
   Benchmark:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     needs: Build
     steps:    
     - uses: actions/checkout@v2
