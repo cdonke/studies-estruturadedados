@@ -34,7 +34,7 @@ namespace Algorithms.Arrays.MaximumProduct
             }
         }
 
-        [Benchmark(Description = "Double-loop - O(n^2)")]
+        //[Benchmark(Description = "Double-loop - O(n^2)")]
         [ArgumentsSource(nameof(Data))]
         public int FirstTry(int[] A)
         {
@@ -57,7 +57,7 @@ namespace Algorithms.Arrays.MaximumProduct
             return maxValue;
         }
 
-        [Benchmark(Description = "Linear - Sorted - O(n.log n)")]
+        //[Benchmark(Description = "Linear - Sorted - O(n.log n)")]
         [ArgumentsSource(nameof(Data))]
         public int SecondTry(int[] A)
         {
@@ -73,7 +73,7 @@ namespace Algorithms.Arrays.MaximumProduct
             }
         }
 
-        [Benchmark(Description = "Linear - Traversal - O(n)")]
+        //[Benchmark(Description = "Linear - Traversal - O(n)")]
         [ArgumentsSource(nameof(Data))]
         public int ThirdTry(int[] A)
         {

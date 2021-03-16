@@ -24,7 +24,7 @@ namespace Algorithms.Codility.CountingElements.PermCheck
             new object[] { new int[] { 102,100 }, 0 }
         };
 
-        [Benchmark]
+        //[Benchmark]
         [ArgumentsSource(nameof(Data))]
         [ExcludeFromCodeCoverage]
         public int FirstTry(int[] A)
@@ -45,7 +45,7 @@ namespace Algorithms.Codility.CountingElements.PermCheck
             return 1;
         }
 
-        [Benchmark]
+        //[Benchmark]
         [ArgumentsSource(nameof(Data))]
         public int SecondTry(int[] A)
         {

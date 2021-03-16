@@ -15,7 +15,7 @@ namespace Algorithms.Arrays.FindTheSum
             yield return new object[] { new int[] { 8, 7, 2, 5, 3, 1 }, 10 };
         }
 
-        [Benchmark]
+        //[Benchmark]
         [ArgumentsSource(nameof(Data))]
         public bool FirstTry(int[] A, int sum)
         {
@@ -31,7 +31,7 @@ namespace Algorithms.Arrays.FindTheSum
             return false;
         }
 
-        [Benchmark]
+        //[Benchmark]
         [ArgumentsSource(nameof(Data))]
         public bool SecondTry(int[] A, int sum)
         {
@@ -61,7 +61,7 @@ namespace Algorithms.Arrays.FindTheSum
             return false;
         }
 
-        [Benchmark]
+        //[Benchmark]
         [ArgumentsSource(nameof(Data))]
         public bool ThirdTry(int[] A, int sum)
         {

@@ -33,7 +33,7 @@ namespace Algorithms.Arrays.FindEquilibrium
             }
         }
 
-        [Benchmark]
+        //[Benchmark]
         [Arguments(new int[] { 0, -3, 5, -4, -2, 3, 1, 0 })]
         //[ArgumentsSource(nameof(Data))]
         public int[] FirstTry(int[] A)

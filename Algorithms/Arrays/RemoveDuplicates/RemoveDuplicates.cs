@@ -20,7 +20,7 @@ namespace Algorithms.Arrays.RemoveDuplicates
             new int[] { 2, 2, 2, 11 }
         };
 
-        [Benchmark(Description = "With new Array - O(n)")]
+        //[Benchmark(Description = "With new Array - O(n)")]
         [ArgumentsSource(nameof(Data))]
         public int[] FirstTry(int[] A)
         {
@@ -46,7 +46,7 @@ namespace Algorithms.Arrays.RemoveDuplicates
             return b;
         }
 
-        [Benchmark(Description = "With sorting - O(n^2)")]
+        //[Benchmark(Description = "With sorting - O(n^2)")]
         [ArgumentsSource(nameof(Data))]
         public int[] SecondTry(int[] A)
         {
@@ -79,7 +79,7 @@ namespace Algorithms.Arrays.RemoveDuplicates
             return A;
         }
 
-        [Benchmark(Description = "With Hashset - O(n)")]
+        //[Benchmark(Description = "With Hashset - O(n)")]
         [ArgumentsSource(nameof(Data))]
         public int[] ThirdTry(int[] A)
         {
@@ -96,7 +96,7 @@ namespace Algorithms.Arrays.RemoveDuplicates
             return B;
         }
 
-        [Benchmark(Description = "In-place")]
+        //[Benchmark(Description = "In-place")]
         [ArgumentsSource(nameof(Data))]
         public int[] FourthTry(int[] A)
         {
