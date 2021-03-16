@@ -1,4 +1,5 @@
-﻿using BenchmarkDotNet.Running;
+﻿using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Running;
 using System;
 using System.Diagnostics.CodeAnalysis;
 
@@ -12,7 +13,7 @@ namespace Algorithms
             if (args.Length > 0)
                 BenchmarkRunner.Run(typeof(Program).Assembly);
             else
-                BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args);
+                BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args, new DebugInProcessConfig());
         }
     }
 }
