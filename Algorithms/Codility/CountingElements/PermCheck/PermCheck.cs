@@ -12,22 +12,22 @@ namespace Algorithms.Codility.CountingElements.PermCheck
     public class PermCheck
     {
         [ExcludeFromCodeCoverage]
-        public object[] Data() => new object[]
+        public IEnumerable<object[]> Data()
         {
             //new object[] { new int[] {4,1,3,2}, 1 },
             //new object[] { new int[] {4,1,3},0 },
-            new object[] { new int[] { Int32.MaxValue }, 0 },
-            new object[] { new int[] { Int32.MinValue }, 0 },
-            new object[] { new int[] { 100,101 }, 1 },
-            new object[] { new int[] { 101,100 }, 1 },
-            new object[] { new int[] { 100,102 }, 0 },
-            new object[] { new int[] { 102,100 }, 0 }
-        };
+            yield return new object[] { new int[] { Int32.MaxValue }, 0 };
+            yield return new object[] { new int[] { Int32.MinValue }, 0 };
+            yield return new object[] { new int[] { 100, 101 }, 1 };
+            yield return new object[] { new int[] { 101, 100 }, 1 };
+            yield return new object[] { new int[] { 100, 102 }, 0 };
+            yield return new object[] { new int[] { 102, 100 }, 0 };
+        }
 
-        //[Benchmark]
+        [Benchmark]
         [ArgumentsSource(nameof(Data))]
         [ExcludeFromCodeCoverage]
-        public int FirstTry(int[] A)
+        public int FirstTry(int[] A, int expected)
         {
             // Sort the array to simplify work
             Array.Sort(A);
@@ -45,9 +45,9 @@ namespace Algorithms.Codility.CountingElements.PermCheck
             return 1;
         }
 
-        //[Benchmark]
+        [Benchmark]
         [ArgumentsSource(nameof(Data))]
-        public int SecondTry(int[] A)
+        public int SecondTry(int[] A, int expected)
         {
             // Sort the array to simplify work
             Array.Sort(A);
