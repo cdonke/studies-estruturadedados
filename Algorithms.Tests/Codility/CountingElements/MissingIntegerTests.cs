@@ -21,7 +21,7 @@ namespace Algorithms.Tests.Codility.CountingElements
         public void FirstTry(int[] A, int expected)
         {
             var solution = new Algorithms.Codility.CountingElements.MissingInteger.MissingInteger();
-            var actual = solution.FirstTry(A);
+            var actual = solution.FirstTry(A, expected);
 
             Assert.AreEqual(expected, actual);
         }
@@ -36,7 +36,7 @@ namespace Algorithms.Tests.Codility.CountingElements
         public void SecondTry(int[] A, int expected)
         {
             var solution = new Algorithms.Codility.CountingElements.MissingInteger.MissingInteger();
-            var actual = solution.SecondTry(A);
+            var actual = solution.SecondTry(A, expected);
 
             Assert.AreEqual(expected, actual);
         }

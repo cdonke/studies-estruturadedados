@@ -68,7 +68,7 @@ namespace Algorithms.Codility.CountingElements.MissingInteger
         [Benchmark]
         [ArgumentsSource(nameof(Data))]
         [ExcludeFromCodeCoverage]
-        public int FirstTry(int[] A)
+        public int FirstTry(int[] A, int missingInteger)
         {
             // Keep a list with the found numbers
             // Allocation problems?
@@ -106,7 +106,7 @@ namespace Algorithms.Codility.CountingElements.MissingInteger
 
         [Benchmark]
         [ArgumentsSource(nameof(Data))]
-        public int SecondTry(int[] A)
+        public int SecondTry(int[] A, int missingInteger)
         {
             // Sort 
             Array.Sort(A);
