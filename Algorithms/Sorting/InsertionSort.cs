@@ -12,11 +12,11 @@ namespace Algorithms.Sorting
     [MarkdownExporterAttribute.GitHub]
     public class InsertionSort
     {
-        private IEnumerable<int[]> _valores = new[] { Helpers.CriarAleatoriosUnicos(50000) };
-
         [ExcludeFromCodeCoverage]
-        public IEnumerable<object> Valores =>  _valores ;
-
+        public IEnumerable<int[]> Valores()
+        {
+            yield return Helpers.CriarAleatoriosUnicos(50000);
+        }
 
         [Benchmark]
         [ArgumentsSource(nameof(Valores))]
