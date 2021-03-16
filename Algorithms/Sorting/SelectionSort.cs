@@ -12,15 +12,14 @@ namespace Algorithms.Sorting
     public class SelectionSort
     {
         private IEnumerable<int[]> _valores = new[] {
-#if !DEBUG
             Helpers.CriarAleatoriosUnicos(50000)
-#else
-            new int[0]
-#endif
         };
 
         [ExcludeFromCodeCoverage]
-        public IEnumerable<object> Valores => _valores;
+        public IEnumerable<object> Valores()
+        {
+            yield return Helpers.CriarAleatoriosUnicos(50000);
+        }
 
         [Benchmark]
         [ArgumentsSource(nameof(Valores))]

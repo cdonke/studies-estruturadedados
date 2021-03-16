@@ -13,7 +13,7 @@ namespace Algorithms.Sorting
     public class InsertionSort
     {
         [ExcludeFromCodeCoverage]
-        public IEnumerable<int[]> Valores()
+        public IEnumerable<object> Valores()
         {
             yield return Helpers.CriarAleatoriosUnicos(50000);
         }

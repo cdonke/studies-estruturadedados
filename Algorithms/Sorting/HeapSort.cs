@@ -28,15 +28,13 @@ namespace Algorithms.Sorting
             return range.OrderBy(q => r.Next()).ToArray();
         }
         [ExcludeFromCodeCoverage]
-        public IEnumerable<int[]> Data()
+        public IEnumerable<object> Data()
         {
-            return new[] {
-                GenerateData(10, 0, 100),
-                GenerateData(50, -100, 100),
-                GenerateData(10_000, -10_000, 10_000) ,
-                GenerateData(100_000, -100_000, 100_000) ,
-                GenerateData(1_000_000, -1_000_000, 1_000_000)
-            };
+            yield return GenerateData(10, 0, 100);
+            yield return GenerateData(50, -100, 100);
+            yield return GenerateData(10_000, -10_000, 10_000);
+            yield return GenerateData(100_000, -100_000, 100_000);
+            yield return GenerateData(1_000_000, -1_000_000, 1_000_000);
         }
         #endregion
 
