@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Algorithms.Leetcode.Easy
+namespace Algorithms.Leetcode.Easy.TwoSum
 {
     [MemoryDiagnoser, KeepBenchmarkFiles, MarkdownExporterAttribute.GitHub]
     public class TwoSum
