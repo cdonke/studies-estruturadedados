@@ -62,7 +62,6 @@ namespace Algorithms.Arrays.MaximumProduct
         public int SecondTry(int[] A)
         {
             Array.Sort(A);
-            int maxValue = 0;
 
             if (A[0] * A[1] > A[A.Length - 1] * A[A.Length - 2])
             {
@@ -72,8 +71,6 @@ namespace Algorithms.Arrays.MaximumProduct
             {
                 return A[A.Length - 1] * A[A.Length - 2];
             }
-
-            return 0;
         }
 
         [Benchmark(Description = "Linear - Traversal - O(n)")]
