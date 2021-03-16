@@ -12,7 +12,7 @@ namespace Algorithms.Tests.Leetcode.Easy
         [DynamicData(nameof(Data), DynamicDataSourceType.Method)]
         public void FirstTry(int[] nums, int target, int[] expected)
         {
-            var solution = new Algorithms.Leetcode.Easy.TwoSum();
+            var solution = new Algorithms.Leetcode.Easy.TwoSum.TwoSum();
             var actual = solution.FirstTry(nums, target, null);
 
             CollectionAssert.AreEqual(expected, actual);
@@ -23,7 +23,7 @@ namespace Algorithms.Tests.Leetcode.Easy
         [DynamicData(nameof(Data), DynamicDataSourceType.Method)]
         public void SecondTry(int[] nums, int target, int[] expected)
         {
-            var solution = new Algorithms.Leetcode.Easy.TwoSum();
+            var solution = new Algorithms.Leetcode.Easy.TwoSum.TwoSum();
             var actual = solution.SecondTry(nums, target, null);
 
             CollectionAssert.AreEqual(expected, actual);
@@ -33,7 +33,7 @@ namespace Algorithms.Tests.Leetcode.Easy
         [DynamicData(nameof(Data), DynamicDataSourceType.Method)]
         public void ThirdTry(int[] nums, int target, int[] expected)
         {
-            var solution = new Algorithms.Leetcode.Easy.TwoSum();
+            var solution = new Algorithms.Leetcode.Easy.TwoSum.TwoSum();
             var actual = solution.ThirdTry(nums, target, null);
 
             CollectionAssert.AreEqual(expected, actual);
@@ -41,7 +41,7 @@ namespace Algorithms.Tests.Leetcode.Easy
 
         public static IEnumerable<object[]> Data()
         {
-            var solution = new Algorithms.Leetcode.Easy.TwoSum();
+            var solution = new Algorithms.Leetcode.Easy.TwoSum.TwoSum();
             foreach (object[] item in solution.Data())
                 yield return item;
         }
