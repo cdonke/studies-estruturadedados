@@ -22,7 +22,7 @@ namespace Algorithms.Leetcode.Easy.PalindromeNumber
 
         [Benchmark]
         [ArgumentsSource(nameof(Data))]
-        public bool FirstTry(int x)
+        public bool FirstTry(int x, bool expected)
         {
             if (x == 0)
                 return true;
@@ -53,7 +53,7 @@ namespace Algorithms.Leetcode.Easy.PalindromeNumber
 
         [Benchmark]
         [ArgumentsSource(nameof(Data))]
-        public bool SecondTry(int x)
+        public bool SecondTry(int x, bool expected)
         {
             // Special cases:
             // As discussed above, when x < 0, x is not a palindrome.

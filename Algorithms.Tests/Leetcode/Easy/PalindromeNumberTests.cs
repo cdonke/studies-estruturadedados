@@ -13,7 +13,7 @@ namespace Algorithms.Tests.Leetcode.Easy
         public void FirstTry(int x, bool expected)
         {
             var solution = new Algorithms.Leetcode.Easy.PalindromeNumber.PalindromeNumber();
-            var actual = solution.FirstTry(x);
+            var actual = solution.FirstTry(x, expected);
 
             Assert.AreEqual(expected, actual);
         }
@@ -23,7 +23,7 @@ namespace Algorithms.Tests.Leetcode.Easy
         public void SecondTry(int x, bool expected)
         {
             var solution = new Algorithms.Leetcode.Easy.PalindromeNumber.PalindromeNumber();
-            var actual = solution.SecondTry(x);
+            var actual = solution.SecondTry(x, expected);
 
             Assert.AreEqual(expected, actual);
         }
