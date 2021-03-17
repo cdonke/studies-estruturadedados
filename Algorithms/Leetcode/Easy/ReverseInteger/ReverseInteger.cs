@@ -1,6 +1,7 @@
 ﻿using BenchmarkDotNet.Attributes;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace Algorithms.Leetcode.Easy.ReverseInteger
@@ -8,6 +9,7 @@ namespace Algorithms.Leetcode.Easy.ReverseInteger
     [MemoryDiagnoser, KeepBenchmarkFiles, MarkdownExporterAttribute.GitHub]
     public class ReverseInteger
     {
+        [ExcludeFromCodeCoverage]
         public IEnumerable<object[]> Data()
         {
             yield return new object[] { 123, 321 };

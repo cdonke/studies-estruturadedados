@@ -3,6 +3,7 @@ using Microsoft.Diagnostics.Tracing.Parsers.Clr;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace Algorithms.Leetcode.Easy.TwoSum
@@ -10,6 +11,7 @@ namespace Algorithms.Leetcode.Easy.TwoSum
     [MemoryDiagnoser, KeepBenchmarkFiles, MarkdownExporterAttribute.GitHub]
     public class TwoSum
     {
+        [ExcludeFromCodeCoverage]
         public IEnumerable<object[]> Data()
         {
             yield return new object[] { new[] { 2, 7, 11, 15 }, 9, new[] { 0, 1 } };
