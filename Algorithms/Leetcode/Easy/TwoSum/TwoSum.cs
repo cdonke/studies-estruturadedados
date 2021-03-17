@@ -35,7 +35,8 @@ namespace Algorithms.Leetcode.Easy.TwoSum
             return new int[0];
         }
 
-        [Benchmark]
+        // Disabled because it's not achievable.
+        //[Benchmark]
         [ArgumentsSource(nameof(Data))]
         public int[] SecondTry(int[] nums, int target, int[] expected)
         {

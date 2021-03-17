@@ -19,7 +19,8 @@ namespace Algorithms.Tests.Leetcode.Easy
         }
 
 
-        [TestMethod]
+        // Disabled because it's not achievable.
+        //[TestMethod]
         [DynamicData(nameof(Data), DynamicDataSourceType.Method)]
         public void SecondTry(int[] nums, int target, int[] expected)
         {
