@@ -1,45 +1,28 @@
 ``` ini
 
 BenchmarkDotNet=v0.12.1, OS=ubuntu 20.04
-Intel Xeon Platinum 8171M CPU 2.60GHz, 1 CPU, 2 logical and 2 physical cores
+Intel Xeon CPU E5-2673 v4 2.30GHz, 1 CPU, 2 logical and 2 physical cores
 .NET Core SDK=3.1.407
-  [Host] : .NET Core 3.1.13 (CoreCLR 4.700.21.11102, CoreFX 4.700.21.11602), X64 RyuJIT
+  [Host]     : .NET Core 3.1.13 (CoreCLR 4.700.21.11102, CoreFX 4.700.21.11602), X64 RyuJIT
+  DefaultJob : .NET Core 3.1.13 (CoreCLR 4.700.21.11102, CoreFX 4.700.21.11602), X64 RyuJIT
 
 
 ```
-|    Method |    N | Mean | Error |
-|---------- |----- |-----:|------:|
-|  **FirstTry** |    **1** |   **NA** |    **NA** |
-| SecondTry |    1 |   NA |    NA |
-|  **FirstTry** |    **2** |   **NA** |    **NA** |
-| SecondTry |    2 |   NA |    NA |
-|  **FirstTry** |   **15** |   **NA** |    **NA** |
-| SecondTry |   15 |   NA |    NA |
-|  **FirstTry** |   **32** |   **NA** |    **NA** |
-| SecondTry |   32 |   NA |    NA |
-|  **FirstTry** |  **147** |   **NA** |    **NA** |
-| SecondTry |  147 |   NA |    NA |
-|  **FirstTry** |  **483** |   **NA** |    **NA** |
-| SecondTry |  483 |   NA |    NA |
-|  **FirstTry** |  **647** |   **NA** |    **NA** |
-| SecondTry |  647 |   NA |    NA |
-|  **FirstTry** | **1041** |   **NA** |    **NA** |
-| SecondTry | 1041 |   NA |    NA |
-
-Benchmarks with issues:
-  BinaryGap.FirstTry: DefaultJob [N=1]
-  BinaryGap.SecondTry: DefaultJob [N=1]
-  BinaryGap.FirstTry: DefaultJob [N=2]
-  BinaryGap.SecondTry: DefaultJob [N=2]
-  BinaryGap.FirstTry: DefaultJob [N=15]
-  BinaryGap.SecondTry: DefaultJob [N=15]
-  BinaryGap.FirstTry: DefaultJob [N=32]
-  BinaryGap.SecondTry: DefaultJob [N=32]
-  BinaryGap.FirstTry: DefaultJob [N=147]
-  BinaryGap.SecondTry: DefaultJob [N=147]
-  BinaryGap.FirstTry: DefaultJob [N=483]
-  BinaryGap.SecondTry: DefaultJob [N=483]
-  BinaryGap.FirstTry: DefaultJob [N=647]
-  BinaryGap.SecondTry: DefaultJob [N=647]
-  BinaryGap.FirstTry: DefaultJob [N=1041]
-  BinaryGap.SecondTry: DefaultJob [N=1041]
+|    Method |    N |        Mean |     Error |    StdDev |  Gen 0 | Gen 1 | Gen 2 | Allocated |
+|---------- |----- |------------:|----------:|----------:|-------:|------:|------:|----------:|
+|  **FirstTry** |    **1** |  **42.4466 ns** | **0.7215 ns** | **0.6396 ns** | **0.0027** |     **-** |     **-** |      **72 B** |
+| SecondTry |    1 |   0.9763 ns | 0.0432 ns | 0.0383 ns |      - |     - |     - |         - |
+|  **FirstTry** |    **2** |  **48.9953 ns** | **0.9899 ns** | **0.9259 ns** | **0.0027** |     **-** |     **-** |      **72 B** |
+| SecondTry |    2 |   2.9139 ns | 0.0801 ns | 0.0749 ns |      - |     - |     - |         - |
+|  **FirstTry** |   **15** |  **64.6827 ns** | **1.2916 ns** | **1.8107 ns** | **0.0027** |     **-** |     **-** |      **72 B** |
+| SecondTry |   15 |   5.9381 ns | 0.1328 ns | 0.1242 ns |      - |     - |     - |         - |
+|  **FirstTry** |   **32** | **104.3030 ns** | **2.0654 ns** | **1.9320 ns** | **0.0049** |     **-** |     **-** |     **128 B** |
+| SecondTry |   32 |  12.5423 ns | 0.1588 ns | 0.1485 ns |      - |     - |     - |         - |
+|  **FirstTry** |  **147** | **120.1853 ns** | **2.2361 ns** | **3.2777 ns** | **0.0048** |     **-** |     **-** |     **128 B** |
+| SecondTry |  147 |  14.8126 ns | 0.2784 ns | 0.2604 ns |      - |     - |     - |         - |
+|  **FirstTry** |  **483** | **158.2907 ns** | **1.9079 ns** | **1.6913 ns** | **0.0081** |     **-** |     **-** |     **216 B** |
+| SecondTry |  483 |  13.2881 ns | 0.2422 ns | 0.2266 ns |      - |     - |     - |         - |
+|  **FirstTry** |  **647** | **163.6959 ns** | **3.2590 ns** | **3.0485 ns** | **0.0081** |     **-** |     **-** |     **216 B** |
+| SecondTry |  647 |  15.0123 ns | 0.2753 ns | 0.2440 ns |      - |     - |     - |         - |
+|  **FirstTry** | **1041** | **164.9029 ns** | **2.6816 ns** | **2.3772 ns** | **0.0081** |     **-** |     **-** |     **216 B** |
+| SecondTry | 1041 |  14.1534 ns | 0.2880 ns | 0.2828 ns |      - |     - |     - |         - |

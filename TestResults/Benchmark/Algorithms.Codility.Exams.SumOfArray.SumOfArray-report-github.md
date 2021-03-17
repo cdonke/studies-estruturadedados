@@ -1,25 +1,18 @@
 ``` ini
 
 BenchmarkDotNet=v0.12.1, OS=ubuntu 20.04
-Intel Xeon Platinum 8171M CPU 2.60GHz, 1 CPU, 2 logical and 2 physical cores
+Intel Xeon CPU E5-2673 v4 2.30GHz, 1 CPU, 2 logical and 2 physical cores
 .NET Core SDK=3.1.407
-  [Host] : .NET Core 3.1.13 (CoreCLR 4.700.21.11102, CoreFX 4.700.21.11602), X64 RyuJIT
+  [Host]     : .NET Core 3.1.13 (CoreCLR 4.700.21.11102, CoreFX 4.700.21.11602), X64 RyuJIT
+  DefaultJob : .NET Core 3.1.13 (CoreCLR 4.700.21.11102, CoreFX 4.700.21.11602), X64 RyuJIT
 
 
 ```
-|                  Method |  N | Mean | Error |
-|------------------------ |--- |-----:|------:|
-| **&#39;Sum of Array equals 0&#39;** |  **2** |   **NA** |    **NA** |
-| **&#39;Sum of Array equals 0&#39;** |  **3** |   **NA** |    **NA** |
-| **&#39;Sum of Array equals 0&#39;** |  **4** |   **NA** |    **NA** |
-| **&#39;Sum of Array equals 0&#39;** | **10** |   **NA** |    **NA** |
-| **&#39;Sum of Array equals 0&#39;** | **20** |   **NA** |    **NA** |
-| **&#39;Sum of Array equals 0&#39;** | **70** |   **NA** |    **NA** |
-
-Benchmarks with issues:
-  SumOfArray.'Sum of Array equals 0': DefaultJob [N=2]
-  SumOfArray.'Sum of Array equals 0': DefaultJob [N=3]
-  SumOfArray.'Sum of Array equals 0': DefaultJob [N=4]
-  SumOfArray.'Sum of Array equals 0': DefaultJob [N=10]
-  SumOfArray.'Sum of Array equals 0': DefaultJob [N=20]
-  SumOfArray.'Sum of Array equals 0': DefaultJob [N=70]
+|                  Method |  N |     Mean |     Error |    StdDev |  Gen 0 | Gen 1 | Gen 2 | Allocated |
+|------------------------ |--- |---------:|----------:|----------:|-------:|------:|------:|----------:|
+| **&#39;Sum of Array equals 0&#39;** |  **2** | **1.979 μs** | **0.0385 μs** | **0.0443 μs** | **0.0114** |     **-** |     **-** |     **312 B** |
+| **&#39;Sum of Array equals 0&#39;** |  **3** | **1.983 μs** | **0.0389 μs** | **0.0583 μs** | **0.0114** |     **-** |     **-** |     **320 B** |
+| **&#39;Sum of Array equals 0&#39;** |  **4** | **2.005 μs** | **0.0348 μs** | **0.0372 μs** | **0.0114** |     **-** |     **-** |     **320 B** |
+| **&#39;Sum of Array equals 0&#39;** | **10** | **2.204 μs** | **0.0309 μs** | **0.0289 μs** | **0.0114** |     **-** |     **-** |     **344 B** |
+| **&#39;Sum of Array equals 0&#39;** | **20** | **2.652 μs** | **0.0505 μs** | **0.0472 μs** | **0.0114** |     **-** |     **-** |     **384 B** |
+| **&#39;Sum of Array equals 0&#39;** | **70** | **6.894 μs** | **0.1067 μs** | **0.0998 μs** | **0.0153** |     **-** |     **-** |     **584 B** |

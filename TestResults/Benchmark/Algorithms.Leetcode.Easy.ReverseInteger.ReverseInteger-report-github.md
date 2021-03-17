@@ -1,49 +1,30 @@
 ``` ini
 
 BenchmarkDotNet=v0.12.1, OS=ubuntu 20.04
-Intel Xeon Platinum 8171M CPU 2.60GHz, 1 CPU, 2 logical and 2 physical cores
+Intel Xeon CPU E5-2673 v4 2.30GHz, 1 CPU, 2 logical and 2 physical cores
 .NET Core SDK=3.1.407
-  [Host] : .NET Core 3.1.13 (CoreCLR 4.700.21.11102, CoreFX 4.700.21.11602), X64 RyuJIT
+  [Host]     : .NET Core 3.1.13 (CoreCLR 4.700.21.11102, CoreFX 4.700.21.11602), X64 RyuJIT
+  DefaultJob : .NET Core 3.1.13 (CoreCLR 4.700.21.11102, CoreFX 4.700.21.11602), X64 RyuJIT
 
 
 ```
-|    Method |           x | expected | Mean | Error |
-|---------- |------------ |--------- |-----:|------:|
-|  **FirstTry** | **-2147483648** |        **0** |   **NA** |    **NA** |
-| SecondTry | -2147483648 |        0 |   NA |    NA |
-|  ThirdTry | -2147483648 |        0 |   NA |    NA |
-|  **FirstTry** |        **-123** |     **-321** |   **NA** |    **NA** |
-| SecondTry |        -123 |     -321 |   NA |    NA |
-|  ThirdTry |        -123 |     -321 |   NA |    NA |
-|  **FirstTry** |           **0** |        **0** |   **NA** |    **NA** |
-| SecondTry |           0 |        0 |   NA |    NA |
-|  ThirdTry |           0 |        0 |   NA |    NA |
-|  **FirstTry** |         **120** |       **21** |   **NA** |    **NA** |
-| SecondTry |         120 |       21 |   NA |    NA |
-|  ThirdTry |         120 |       21 |   NA |    NA |
-|  **FirstTry** |         **123** |      **321** |   **NA** |    **NA** |
-| SecondTry |         123 |      321 |   NA |    NA |
-|  ThirdTry |         123 |      321 |   NA |    NA |
-|  **FirstTry** |  **1534236469** |        **0** |   **NA** |    **NA** |
-| SecondTry |  1534236469 |        0 |   NA |    NA |
-|  ThirdTry |  1534236469 |        0 |   NA |    NA |
-
-Benchmarks with issues:
-  ReverseInteger.FirstTry: DefaultJob [x=-2147483648, expected=0]
-  ReverseInteger.SecondTry: DefaultJob [x=-2147483648, expected=0]
-  ReverseInteger.ThirdTry: DefaultJob [x=-2147483648, expected=0]
-  ReverseInteger.FirstTry: DefaultJob [x=-123, expected=-321]
-  ReverseInteger.SecondTry: DefaultJob [x=-123, expected=-321]
-  ReverseInteger.ThirdTry: DefaultJob [x=-123, expected=-321]
-  ReverseInteger.FirstTry: DefaultJob [x=0, expected=0]
-  ReverseInteger.SecondTry: DefaultJob [x=0, expected=0]
-  ReverseInteger.ThirdTry: DefaultJob [x=0, expected=0]
-  ReverseInteger.FirstTry: DefaultJob [x=120, expected=21]
-  ReverseInteger.SecondTry: DefaultJob [x=120, expected=21]
-  ReverseInteger.ThirdTry: DefaultJob [x=120, expected=21]
-  ReverseInteger.FirstTry: DefaultJob [x=123, expected=321]
-  ReverseInteger.SecondTry: DefaultJob [x=123, expected=321]
-  ReverseInteger.ThirdTry: DefaultJob [x=123, expected=321]
-  ReverseInteger.FirstTry: DefaultJob [x=1534236469, expected=0]
-  ReverseInteger.SecondTry: DefaultJob [x=1534236469, expected=0]
-  ReverseInteger.ThirdTry: DefaultJob [x=1534236469, expected=0]
+|    Method |           x | expected |        Mean |     Error |    StdDev |  Gen 0 | Gen 1 | Gen 2 | Allocated |
+|---------- |------------ |--------- |------------:|----------:|----------:|-------:|------:|------:|----------:|
+|  **FirstTry** | **-2147483648** |        **0** |  **25.5189 ns** | **0.3657 ns** | **0.3054 ns** |      **-** |     **-** |     **-** |         **-** |
+| SecondTry | -2147483648 |        0 | 210.1464 ns | 3.8446 ns | 3.5962 ns | 0.0083 |     - |     - |     224 B |
+|  ThirdTry | -2147483648 |        0 |  28.1875 ns | 0.4364 ns | 0.3869 ns |      - |     - |     - |         - |
+|  **FirstTry** |        **-123** |     **-321** | **156.3840 ns** | **3.1535 ns** | **2.9498 ns** | **0.0048** |     **-** |     **-** |     **128 B** |
+| SecondTry |        -123 |     -321 | 203.1155 ns | 3.8370 ns | 3.5891 ns | 0.0029 |     - |     - |      80 B |
+|  ThirdTry |        -123 |     -321 |   8.6158 ns | 0.2049 ns | 0.2193 ns |      - |     - |     - |         - |
+|  **FirstTry** |           **0** |        **0** | **152.7335 ns** | **2.5279 ns** | **2.2409 ns** | **0.0033** |     **-** |     **-** |      **88 B** |
+| SecondTry |           0 |        0 |  12.5089 ns | 0.2811 ns | 0.3346 ns | 0.0015 |     - |     - |      40 B |
+|  ThirdTry |           0 |        0 |   0.3503 ns | 0.0315 ns | 0.0294 ns |      - |     - |     - |         - |
+|  **FirstTry** |         **120** |       **21** | **155.3086 ns** | **3.0423 ns** | **3.8475 ns** | **0.0048** |     **-** |     **-** |     **128 B** |
+| SecondTry |         120 |       21 | 204.5730 ns | 3.6292 ns | 4.1794 ns | 0.0029 |     - |     - |      80 B |
+|  ThirdTry |         120 |       21 |   8.2696 ns | 0.1631 ns | 0.1526 ns |      - |     - |     - |         - |
+|  **FirstTry** |         **123** |      **321** | **156.5373 ns** | **3.1490 ns** | **4.6158 ns** | **0.0048** |     **-** |     **-** |     **128 B** |
+| SecondTry |         123 |      321 | 203.2870 ns | 2.6037 ns | 2.4355 ns | 0.0029 |     - |     - |      80 B |
+|  ThirdTry |         123 |      321 |   8.2868 ns | 0.1966 ns | 0.1839 ns |      - |     - |     - |         - |
+|  **FirstTry** |  **1534236469** |        **0** | **196.7434 ns** | **3.8398 ns** | **5.1261 ns** | **0.0072** |     **-** |     **-** |     **192 B** |
+| SecondTry |  1534236469 |        0 | 211.1511 ns | 4.1984 ns | 5.7468 ns | 0.0083 |     - |     - |     224 B |
+|  ThirdTry |  1534236469 |        0 |  28.3826 ns | 0.5250 ns | 0.4911 ns |      - |     - |     - |         - |
