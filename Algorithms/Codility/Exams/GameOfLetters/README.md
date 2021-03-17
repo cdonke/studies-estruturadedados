@@ -10,7 +10,7 @@ He is noted as the k-th player, and his index is added to A[] as he plays.
 
 # Benchmark
 
-**Last update:** Tue Mar 16 12:06:48 UTC 2021
+**Last update:** Wed Mar 17 12:18:22 UTC 2021
 
 ``` ini
 

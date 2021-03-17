@@ -6,7 +6,7 @@ The maximum product is the `(-10, -3)` or `(5, 6)` pair.
 
 # Benchmark
 
-**Last update:** Tue Mar 16 12:06:48 UTC 2021
+**Last update:** Wed Mar 17 12:18:22 UTC 2021
 
 ``` ini
 
