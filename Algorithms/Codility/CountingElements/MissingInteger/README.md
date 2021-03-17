@@ -26,7 +26,7 @@ Write an *efficient* algorithm for the following assumptions:
 
 # Benchmark
 
-**Last update:** Tue Mar 16 12:06:48 UTC 2021
+**Last update:** Wed Mar 17 12:18:22 UTC 2021
 
 ``` ini
 
@@ -37,31 +37,31 @@ Intel Xeon Platinum 8171M CPU 2.60GHz, 1 CPU, 2 logical and 2 physical cores
 
 
 ```
-|    Method |         A | Mean | Error |
-|---------- |---------- |-----:|------:|
-|  FirstTry | Object[2] |   NA |    NA |
-|  FirstTry | Object[2] |   NA |    NA |
-|  FirstTry | Object[2] |   NA |    NA |
-|  FirstTry | Object[2] |   NA |    NA |
-|  FirstTry | Object[2] |   NA |    NA |
-|  FirstTry | Object[2] |   NA |    NA |
-| SecondTry | Object[2] |   NA |    NA |
-| SecondTry | Object[2] |   NA |    NA |
-| SecondTry | Object[2] |   NA |    NA |
-| SecondTry | Object[2] |   NA |    NA |
-| SecondTry | Object[2] |   NA |    NA |
-| SecondTry | Object[2] |   NA |    NA |
+|    Method |             A | missingInteger | Mean | Error |
+|---------- |-------------- |--------------- |-----:|------:|
+|  **FirstTry** |   **Int32[1078]** |              **1** |   **NA** |    **NA** |
+|  **FirstTry** |    **Int32[357]** |              **1** |   **NA** |    **NA** |
+| **SecondTry** |    **Int32[441]** |              **1** |   **NA** |    **NA** |
+| **SecondTry** |    **Int32[477]** |              **1** |   **NA** |    **NA** |
+| **SecondTry** |    **Int32[576]** |              **1** |   **NA** |    **NA** |
+| **SecondTry** |   **Int32[6387]** |              **1** |   **NA** |    **NA** |
+| **SecondTry** |    **Int32[741]** |              **1** |   **NA** |    **NA** |
+|  **FirstTry** |    **Int32[757]** |              **1** |   **NA** |    **NA** |
+|  **FirstTry** |    **Int32[803]** |              **1** |   **NA** |    **NA** |
+|  **FirstTry** | **Int32[936767]** |              **1** |   **NA** |    **NA** |
+|  **FirstTry** |   **Int32[9766]** |              **1** |   **NA** |    **NA** |
+| **SecondTry** | **Int32[986017]** |         **124862** |   **NA** |    **NA** |
 
 Benchmarks with issues:
-  MissingInteger.FirstTry: DefaultJob [A=Object[2]]
-  MissingInteger.FirstTry: DefaultJob [A=Object[2]]
-  MissingInteger.FirstTry: DefaultJob [A=Object[2]]
-  MissingInteger.FirstTry: DefaultJob [A=Object[2]]
-  MissingInteger.FirstTry: DefaultJob [A=Object[2]]
-  MissingInteger.FirstTry: DefaultJob [A=Object[2]]
-  MissingInteger.SecondTry: DefaultJob [A=Object[2]]
-  MissingInteger.SecondTry: DefaultJob [A=Object[2]]
-  MissingInteger.SecondTry: DefaultJob [A=Object[2]]
-  MissingInteger.SecondTry: DefaultJob [A=Object[2]]
-  MissingInteger.SecondTry: DefaultJob [A=Object[2]]
-  MissingInteger.SecondTry: DefaultJob [A=Object[2]]
+  MissingInteger.FirstTry: DefaultJob [A=Int32[1078], missingInteger=1]
+  MissingInteger.FirstTry: DefaultJob [A=Int32[357], missingInteger=1]
+  MissingInteger.SecondTry: DefaultJob [A=Int32[441], missingInteger=1]
+  MissingInteger.SecondTry: DefaultJob [A=Int32[477], missingInteger=1]
+  MissingInteger.SecondTry: DefaultJob [A=Int32[576], missingInteger=1]
+  MissingInteger.SecondTry: DefaultJob [A=Int32[6387], missingInteger=1]
+  MissingInteger.SecondTry: DefaultJob [A=Int32[741], missingInteger=1]
+  MissingInteger.FirstTry: DefaultJob [A=Int32[757], missingInteger=1]
+  MissingInteger.FirstTry: DefaultJob [A=Int32[803], missingInteger=1]
+  MissingInteger.FirstTry: DefaultJob [A=Int32[936767], missingInteger=1]
+  MissingInteger.FirstTry: DefaultJob [A=Int32[9766], missingInteger=1]
+  MissingInteger.SecondTry: DefaultJob [A=Int32[986017], missingInteger=124862]
