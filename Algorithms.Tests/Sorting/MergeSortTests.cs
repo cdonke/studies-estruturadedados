@@ -24,6 +24,19 @@ namespace Algorithms.Tests.Sorting
             CollectionAssert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
+        [DynamicData(nameof(Data), DynamicDataSourceType.Method)]
+        public void SecondTry(int[] A)
+        {
+            int[] expected = (int[])A.Clone();
+            Array.Sort(expected);
+
+            var solution = new Algorithms.Sorting.MergeSort();
+            var actual = solution.SecondTry(A);
+
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
         public static IEnumerable<object[]> Data()
         {
             return Algorithms.Sorting.MergeSort.Data();
