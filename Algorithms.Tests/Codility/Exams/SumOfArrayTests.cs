@@ -17,11 +17,36 @@ namespace Algorithms.Tests.Codility.Exams
         [DataRow(2)]
         [DataRow(70)]
         [DataRow(20)]
+        [DataRow(100)]
         public void FirstTry_Tests(int N)
         {
             var solution = new Algorithms.Codility.Exams.SumOfArray.SumOfArray();
 
             var result = solution.FirstTry(N);
+
+            var sum = 0;
+            foreach (var item in result)
+            {
+                sum += item;
+                Console.WriteLine(item);
+            }
+
+            Assert.AreEqual(0, sum);
+        }
+
+        [TestMethod]
+        [DataRow(4)]
+        [DataRow(3)]
+        [DataRow(10)]
+        [DataRow(2)]
+        [DataRow(70)]
+        [DataRow(20)]
+        [DataRow(100)]
+        public void SecondTry_Tests(int N)
+        {
+            var solution = new Algorithms.Codility.Exams.SumOfArray.SumOfArray();
+
+            var result = solution.SecondTry(N);
 
             var sum = 0;
             foreach (var item in result)
