@@ -1,10 +1,3 @@
-﻿# Counting Inversions within an Array
-
-
-# Benchmark
-
-**Last update:** Tue May 25 19:55:36 UTC 2021
-
 ``` ini
 
 BenchmarkDotNet=v0.12.1, OS=ubuntu 20.04

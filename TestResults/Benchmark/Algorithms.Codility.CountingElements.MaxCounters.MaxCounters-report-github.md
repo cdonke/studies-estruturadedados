@@ -2,23 +2,36 @@
 
 BenchmarkDotNet=v0.12.1, OS=ubuntu 20.04
 Intel Xeon CPU E5-2673 v4 2.30GHz, 1 CPU, 2 logical and 2 physical cores
-.NET Core SDK=3.1.407
-  [Host]     : .NET Core 3.1.13 (CoreCLR 4.700.21.11102, CoreFX 4.700.21.11602), X64 RyuJIT
-  DefaultJob : .NET Core 3.1.13 (CoreCLR 4.700.21.11102, CoreFX 4.700.21.11602), X64 RyuJIT
+.NET Core SDK=3.1.409
+  [Host] : .NET Core 3.1.15 (CoreCLR 4.700.21.21202, CoreFX 4.700.21.21402), X64 RyuJIT
 
 
 ```
-|    Method |     N |            A |         Mean |      Error |     StdDev |  Gen 0 |  Gen 1 | Gen 2 | Allocated |
-|---------- |------ |------------- |-------------:|-----------:|-----------:|-------:|-------:|------:|----------:|
-|  **FirstTry** |     **5** | **Int32[10000]** |     **38.51 μs** |   **0.736 μs** |   **0.904 μs** |      **-** |      **-** |     **-** |      **48 B** |
-| SecondTry |     5 | Int32[10000] |     38.54 μs |   0.735 μs |   0.755 μs |      - |      - |     - |      48 B |
-|  ThirdTry |     5 | Int32[10000] |     27.76 μs |   0.536 μs |   0.550 μs |      - |      - |     - |      48 B |
-| FourthTry |     5 | Int32[10000] |     27.95 μs |   0.367 μs |   0.343 μs |      - |      - |     - |      48 B |
-|  **FirstTry** | **10000** | **Int32[10000]** |     **19.26 μs** |   **0.378 μs** |   **0.505 μs** | **1.5259** | **0.1831** |     **-** |   **40024 B** |
-| SecondTry | 10000 | Int32[10000] |     22.62 μs |   0.385 μs |   0.501 μs | 1.5259 | 0.1831 |     - |   40024 B |
-|  ThirdTry | 10000 | Int32[10000] |     40.88 μs |   0.752 μs |   0.704 μs | 1.5259 | 0.1831 |     - |   40024 B |
-| FourthTry | 10000 | Int32[10000] |     41.15 μs |   0.818 μs |   1.147 μs | 1.5259 | 0.1831 |     - |   40024 B |
-|  **FirstTry** | **10000** |  **Int32[3000]** | **15,169.61 μs** | **166.986 μs** | **148.029 μs** |      **-** |      **-** |     **-** |   **40025 B** |
-| SecondTry | 10000 |  Int32[3000] | 15,237.20 μs | 221.597 μs | 207.282 μs |      - |      - |     - |   40175 B |
-|  ThirdTry | 10000 |  Int32[3000] |     10.86 μs |   0.216 μs |   0.222 μs | 1.5259 | 0.1831 |     - |   40024 B |
-| FourthTry | 10000 |  Int32[3000] |     10.85 μs |   0.136 μs |   0.127 μs | 1.5259 | 0.1831 |     - |   40024 B |
+|    Method |     N |            A | Mean | Error |
+|---------- |------ |------------- |-----:|------:|
+|  **FirstTry** |     **5** | **Int32[10000]** |   **NA** |    **NA** |
+| SecondTry |     5 | Int32[10000] |   NA |    NA |
+|  ThirdTry |     5 | Int32[10000] |   NA |    NA |
+| FourthTry |     5 | Int32[10000] |   NA |    NA |
+|  **FirstTry** | **10000** | **Int32[10000]** |   **NA** |    **NA** |
+| SecondTry | 10000 | Int32[10000] |   NA |    NA |
+|  ThirdTry | 10000 | Int32[10000] |   NA |    NA |
+| FourthTry | 10000 | Int32[10000] |   NA |    NA |
+|  **FirstTry** | **10000** |  **Int32[3000]** |   **NA** |    **NA** |
+| SecondTry | 10000 |  Int32[3000] |   NA |    NA |
+|  ThirdTry | 10000 |  Int32[3000] |   NA |    NA |
+| FourthTry | 10000 |  Int32[3000] |   NA |    NA |
+
+Benchmarks with issues:
+  MaxCounters.FirstTry: DefaultJob [N=5, A=Int32[10000]]
+  MaxCounters.SecondTry: DefaultJob [N=5, A=Int32[10000]]
+  MaxCounters.ThirdTry: DefaultJob [N=5, A=Int32[10000]]
+  MaxCounters.FourthTry: DefaultJob [N=5, A=Int32[10000]]
+  MaxCounters.FirstTry: DefaultJob [N=10000, A=Int32[10000]]
+  MaxCounters.SecondTry: DefaultJob [N=10000, A=Int32[10000]]
+  MaxCounters.ThirdTry: DefaultJob [N=10000, A=Int32[10000]]
+  MaxCounters.FourthTry: DefaultJob [N=10000, A=Int32[10000]]
+  MaxCounters.FirstTry: DefaultJob [N=10000, A=Int32[3000]]
+  MaxCounters.SecondTry: DefaultJob [N=10000, A=Int32[3000]]
+  MaxCounters.ThirdTry: DefaultJob [N=10000, A=Int32[3000]]
+  MaxCounters.FourthTry: DefaultJob [N=10000, A=Int32[3000]]
