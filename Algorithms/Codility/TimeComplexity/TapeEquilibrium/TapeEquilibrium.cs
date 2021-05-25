@@ -12,8 +12,10 @@ namespace Algorithms.Codility.TimeComplexity.TapeEquilibrium
     public class TapeEquilibrium
     {
         [ExcludeFromCodeCoverage]
-        public object[] data() =>
-            new[] { new int[] { 3, 1, 2, 4, 3 } };
+        public IEnumerable<object[]> data()
+        {
+            yield return new object[] { new int[] { 3, 1, 2, 4, 3 } };
+        }
 
         [Benchmark]
         [ArgumentsSource(nameof(data))]

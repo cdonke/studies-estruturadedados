@@ -14,14 +14,14 @@ namespace Algorithms.Codility.TimeComplexity.PermMissingElem
     public class PermMissingElem
     {
         [ExcludeFromCodeCoverage]
-        public object[] data()
+        public IEnumerable<object[]> data()
         {
             var range = (from q in Enumerable.Range(1, DataLength)
                          where q != MissingValue
                          select q).ToArray();
 
 
-            return new[] { range };
+            yield return new object[] { new[] { range } };
         }
         [ExcludeFromCodeCoverage]
         [Params(10_001, 12_345)]

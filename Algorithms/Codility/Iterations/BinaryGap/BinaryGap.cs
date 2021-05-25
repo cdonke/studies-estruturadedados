@@ -13,8 +13,10 @@ namespace Algorithms.Codility.Iterations.BinaryGap
     public class BinaryGap
     {
         [ExcludeFromCodeCoverage]
-        public int[] data() => 
-            new int[] { 1, 2, 147, 483, 647, 1041, 15, 32 };
+        public IEnumerable<object[]> data()
+        {
+            yield return new object[] { new int[] { 1, 2, 147, 483, 647, 1041, 15, 32 } };
+        }
 
         [Benchmark]
         [ArgumentsSource(nameof(data))]
