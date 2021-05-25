@@ -13,9 +13,9 @@ namespace Algorithms.Arrays.MaximumProduct
     public class MaximumProduct
     {
         [ExcludeFromCodeCoverage]
-        public IEnumerable<int[]> Data()
+        public IEnumerable<object[]> Data()
         {
-            yield return new int[] { -10, -3, 5, 6, -2 };
+            yield return new object[] { new int[] { -10, -3, 5, 6, -2 } };
 
             Random r = new Random();
 
@@ -30,7 +30,7 @@ namespace Algorithms.Arrays.MaximumProduct
 #if DEBUG
                 Console.WriteLine($"[{string.Join(", ", arrNumbers)}]");
 #endif
-                yield return arrNumbers;
+                yield return new object[] { arrNumbers };
             }
         }
 

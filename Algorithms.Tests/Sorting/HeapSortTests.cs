@@ -27,15 +27,7 @@ namespace Algorithms.Tests.Sorting
         public static IEnumerable<object[]> largeData()
         {
             var solution = new Algorithms.Sorting.HeapSort();
-            var data = solution.Data();
-            foreach (int[] item in data)
-            {
-                var lstData = new List<int>();
-                foreach (int el in item)
-                    lstData.Add(el);
-
-                yield return new object[] { lstData.ToArray() };
-            };
+            return solution.Data();
         }
 
 
