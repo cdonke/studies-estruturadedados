@@ -52,12 +52,12 @@ Merge(A, start, middle, length):
 
 ## Benchmark
 
-**Last update:** Tue May 25 19:55:36 UTC 2021
+**Last update:** Tue May 25 20:02:21 UTC 2021
 
 ``` ini
 
 BenchmarkDotNet=v0.12.1, OS=ubuntu 20.04
-Intel Xeon CPU E5-2673 v4 2.30GHz, 1 CPU, 2 logical and 2 physical cores
+Intel Xeon Platinum 8171M CPU 2.60GHz, 1 CPU, 2 logical and 2 physical cores
 .NET Core SDK=3.1.409
   [Host] : .NET Core 3.1.15 (CoreCLR 4.700.21.21202, CoreFX 4.700.21.21402), X64 RyuJIT
 
@@ -65,26 +65,26 @@ Intel Xeon CPU E5-2673 v4 2.30GHz, 1 CPU, 2 logical and 2 physical cores
 ```
 |    Method |           A | Mean | Error |
 |---------- |------------ |-----:|------:|
-| **SecondTry** | **Int32[1020]** |   **NA** |    **NA** |
-|  **FirstTry** | **Int32[1184]** |   **NA** |    **NA** |
-|  **FirstTry** | **Int32[1390]** |   **NA** |    **NA** |
-| **SecondTry** | **Int32[1589]** |   **NA** |    **NA** |
-| **SecondTry** | **Int32[1700]** |   **NA** |    **NA** |
-|  **FirstTry** | **Int32[1980]** |   **NA** |    **NA** |
-| **SecondTry** | **Int32[2286]** |   **NA** |    **NA** |
-|  **FirstTry** | **Int32[2809]** |   **NA** |    **NA** |
-| **SecondTry** | **Int32[3132]** |   **NA** |    **NA** |
-| **SecondTry** | **Int32[3203]** |   **NA** |    **NA** |
-| **SecondTry** | **Int32[3609]** |   **NA** |    **NA** |
-|  **FirstTry** | **Int32[3635]** |   **NA** |    **NA** |
-| **SecondTry** | **Int32[3981]** |   **NA** |    **NA** |
-| **SecondTry** | **Int32[4086]** |   **NA** |    **NA** |
-| **SecondTry** |  **Int32[434]** |   **NA** |    **NA** |
-|  **FirstTry** | **Int32[4380]** |   **NA** |    **NA** |
-|  **FirstTry** | **Int32[5106]** |   **NA** |    **NA** |
-|  **FirstTry** | **Int32[5802]** |   **NA** |    **NA** |
-|  **FirstTry** |  **Int32[592]** |   **NA** |    **NA** |
-|  **FirstTry** |  **Int32[669]** |   **NA** |    **NA** |
+|  **FirstTry** | **Int32[1412]** |   **NA** |    **NA** |
+| **SecondTry** | **Int32[1529]** |   **NA** |    **NA** |
+| **SecondTry** | **Int32[1870]** |   **NA** |    **NA** |
+|  **FirstTry** | **Int32[2205]** |   **NA** |    **NA** |
+|  **FirstTry** | **Int32[2278]** |   **NA** |    **NA** |
+|  **FirstTry** | **Int32[2390]** |   **NA** |    **NA** |
+| **SecondTry** | **Int32[2514]** |   **NA** |    **NA** |
+|  **FirstTry** | **Int32[3043]** |   **NA** |    **NA** |
+| **SecondTry** | **Int32[3152]** |   **NA** |    **NA** |
+| **SecondTry** | **Int32[3918]** |   **NA** |    **NA** |
+|  **FirstTry** | **Int32[4005]** |   **NA** |    **NA** |
+| **SecondTry** | **Int32[4151]** |   **NA** |    **NA** |
+|  **FirstTry** | **Int32[4478]** |   **NA** |    **NA** |
+| **SecondTry** | **Int32[4569]** |   **NA** |    **NA** |
+| **SecondTry** | **Int32[4996]** |   **NA** |    **NA** |
+| **SecondTry** | **Int32[5295]** |   **NA** |    **NA** |
+|  **FirstTry** |  **Int32[540]** |   **NA** |    **NA** |
+|  **FirstTry** | **Int32[5421]** |   **NA** |    **NA** |
+|  **FirstTry** | **Int32[6218]** |   **NA** |    **NA** |
+| **SecondTry** |  **Int32[665]** |   **NA** |    **NA** |
 |  **FirstTry** |    **Int32[7]** |   **NA** |    **NA** |
 | SecondTry |    Int32[7] |   NA |    NA |
 |  **FirstTry** |    **Int32[8]** |   **NA** |    **NA** |
@@ -95,26 +95,26 @@ Intel Xeon CPU E5-2673 v4 2.30GHz, 1 CPU, 2 logical and 2 physical cores
 | SecondTry |    Int32[8] |   NA |    NA |
 
 Benchmarks with issues:
-  MergeSort.SecondTry: DefaultJob [A=Int32[1020]]
-  MergeSort.FirstTry: DefaultJob [A=Int32[1184]]
-  MergeSort.FirstTry: DefaultJob [A=Int32[1390]]
-  MergeSort.SecondTry: DefaultJob [A=Int32[1589]]
-  MergeSort.SecondTry: DefaultJob [A=Int32[1700]]
-  MergeSort.FirstTry: DefaultJob [A=Int32[1980]]
-  MergeSort.SecondTry: DefaultJob [A=Int32[2286]]
-  MergeSort.FirstTry: DefaultJob [A=Int32[2809]]
-  MergeSort.SecondTry: DefaultJob [A=Int32[3132]]
-  MergeSort.SecondTry: DefaultJob [A=Int32[3203]]
-  MergeSort.SecondTry: DefaultJob [A=Int32[3609]]
-  MergeSort.FirstTry: DefaultJob [A=Int32[3635]]
-  MergeSort.SecondTry: DefaultJob [A=Int32[3981]]
-  MergeSort.SecondTry: DefaultJob [A=Int32[4086]]
-  MergeSort.SecondTry: DefaultJob [A=Int32[434]]
-  MergeSort.FirstTry: DefaultJob [A=Int32[4380]]
-  MergeSort.FirstTry: DefaultJob [A=Int32[5106]]
-  MergeSort.FirstTry: DefaultJob [A=Int32[5802]]
-  MergeSort.FirstTry: DefaultJob [A=Int32[592]]
-  MergeSort.FirstTry: DefaultJob [A=Int32[669]]
+  MergeSort.FirstTry: DefaultJob [A=Int32[1412]]
+  MergeSort.SecondTry: DefaultJob [A=Int32[1529]]
+  MergeSort.SecondTry: DefaultJob [A=Int32[1870]]
+  MergeSort.FirstTry: DefaultJob [A=Int32[2205]]
+  MergeSort.FirstTry: DefaultJob [A=Int32[2278]]
+  MergeSort.FirstTry: DefaultJob [A=Int32[2390]]
+  MergeSort.SecondTry: DefaultJob [A=Int32[2514]]
+  MergeSort.FirstTry: DefaultJob [A=Int32[3043]]
+  MergeSort.SecondTry: DefaultJob [A=Int32[3152]]
+  MergeSort.SecondTry: DefaultJob [A=Int32[3918]]
+  MergeSort.FirstTry: DefaultJob [A=Int32[4005]]
+  MergeSort.SecondTry: DefaultJob [A=Int32[4151]]
+  MergeSort.FirstTry: DefaultJob [A=Int32[4478]]
+  MergeSort.SecondTry: DefaultJob [A=Int32[4569]]
+  MergeSort.SecondTry: DefaultJob [A=Int32[4996]]
+  MergeSort.SecondTry: DefaultJob [A=Int32[5295]]
+  MergeSort.FirstTry: DefaultJob [A=Int32[540]]
+  MergeSort.FirstTry: DefaultJob [A=Int32[5421]]
+  MergeSort.FirstTry: DefaultJob [A=Int32[6218]]
+  MergeSort.SecondTry: DefaultJob [A=Int32[665]]
   MergeSort.FirstTry: DefaultJob [A=Int32[7]]
   MergeSort.SecondTry: DefaultJob [A=Int32[7]]
   MergeSort.FirstTry: DefaultJob [A=Int32[8]]
