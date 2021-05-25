@@ -10,17 +10,17 @@ namespace Algorithms.Sorting
     [MarkdownExporterAttribute.GitHub]
     public class ShellSort
     {
-        public IEnumerable<int[]> Data()
+        public IEnumerable<object[]> Data()
         {
-            yield return new int[] { 1 };
-            yield return new int[] { 2, 1 };
-            yield return new int[] { 2, 1, 3 };
-            yield return new int[] { 1, 1, 1 };
-            yield return new int[] { 2, -1, 3, 3 };
-            yield return new int[] { 4, -5, 3, 3 };
-            yield return new int[] { 0, -5, 3, 3 };
-            yield return new int[] { 0, -5, 3, 0 };
-            yield return new int[] { 3, 2, 5, 5, 1, 0, 7, 8 };
+            yield return new object[] { new int[] { 1 } };
+            yield return new object[] { new int[] { 2, 1 } };
+            yield return new object[] { new int[] { 2, 1, 3 } };
+            yield return new object[] { new int[] { 1, 1, 1 } };
+            yield return new object[] { new int[] { 2, -1, 3, 3 } };
+            yield return new object[] { new int[] { 4, -5, 3, 3 } };
+            yield return new object[] { new int[] { 0, -5, 3, 3 } };
+            yield return new object[] { new int[] { 0, -5, 3, 0 } };
+            yield return new object[] { new int[] { 3, 2, 5, 5, 1, 0, 7, 8 } };
         }
 
         [Benchmark]

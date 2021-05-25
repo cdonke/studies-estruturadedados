@@ -16,9 +16,9 @@ namespace Algorithms.Sorting
         };
 
         [ExcludeFromCodeCoverage]
-        public IEnumerable<object> Valores()
+        public IEnumerable<object[]> Valores()
         {
-            yield return Helpers.CriarAleatoriosUnicos(50000);
+            yield return new object[] { Helpers.CriarAleatoriosUnicos(50000) };
         }
 
         [Benchmark]
