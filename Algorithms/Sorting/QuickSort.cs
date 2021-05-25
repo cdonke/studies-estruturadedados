@@ -26,9 +26,9 @@ namespace Algorithms.Sorting
         }
 
         [ExcludeFromCodeCoverage]
-        public IEnumerable<object> Valores()
+        public IEnumerable<object[]> Valores()
         {
-            yield return (int[])_valores.Clone();
+            yield return new object[] { (int[])_valores.Clone() };
         }
 
         [Benchmark]

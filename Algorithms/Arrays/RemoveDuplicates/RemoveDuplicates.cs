@@ -12,12 +12,12 @@ namespace Algorithms.Arrays.RemoveDuplicates
     public class RemoveDuplicates
     {
         [ExcludeFromCodeCoverage]
-        public IEnumerable<int[]> Data()
+        public IEnumerable<object[]> Data()
         {
-            yield return new int[] { 1, 2, 2, 6, 6, 8, 9, 10, 10 };
-            yield return new int[] { 2, 2, 2, 2, 2, 2 };
-            yield return new int[] { 2, 3, 3, 3, 6, 9, 9 };
-            yield return new int[] { 2, 2, 2, 11 };
+            yield return new object[] { new int[] { 1, 2, 2, 6, 6, 8, 9, 10, 10 } };
+            yield return new object[] { new int[] { 2, 2, 2, 2, 2, 2 } };
+            yield return new object[] { new int[] { 2, 3, 3, 3, 6, 9, 9 } };
+            yield return new object[] { new int[] { 2, 2, 2, 11 } };
         }
 
         [Benchmark(Description = "With new Array - O(n)")]

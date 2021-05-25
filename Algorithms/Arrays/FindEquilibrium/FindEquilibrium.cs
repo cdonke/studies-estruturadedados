@@ -12,9 +12,9 @@ namespace Algorithms.Arrays.FindEquilibrium
     public class FindEquilibrium
     {
         [ExcludeFromCodeCoverage]
-        public IEnumerable<int[]> Data()
+        public IEnumerable<object[]> Data()
         {
-            yield return new int[] { -10, -3, 5, 6, -2 };
+            yield return new object[] { new int[] { -10, -3, 5, 6, -2 } };
 
             Random r = new Random();
 
@@ -29,13 +29,13 @@ namespace Algorithms.Arrays.FindEquilibrium
 #if DEBUG
                 Console.WriteLine($"[{string.Join(", ", arrNumbers)}]");
 #endif
-                yield return arrNumbers;
+                yield return new object[] { arrNumbers };
             }
         }
 
         [Benchmark]
-        [Arguments(new int[] { 0, -3, 5, -4, -2, 3, 1, 0 })]
-        //[ArgumentsSource(nameof(Data))]
+        //[Arguments(new int[] { 0, -3, 5, -4, -2, 3, 1, 0 })]
+        [ArgumentsSource(nameof(Data))]
         public int[] FirstTry(int[] A)
         {
             int[] left = new int[A.Length],
