@@ -2,17 +2,40 @@
 
 BenchmarkDotNet=v0.12.1, OS=ubuntu 20.04
 Intel Xeon CPU E5-2673 v4 2.30GHz, 1 CPU, 2 logical and 2 physical cores
-.NET Core SDK=3.1.407
-  [Host]     : .NET Core 3.1.13 (CoreCLR 4.700.21.11102, CoreFX 4.700.21.11602), X64 RyuJIT
-  DefaultJob : .NET Core 3.1.13 (CoreCLR 4.700.21.11102, CoreFX 4.700.21.11602), X64 RyuJIT
+.NET Core SDK=3.1.409
+  [Host] : .NET Core 3.1.15 (CoreCLR 4.700.21.21202, CoreFX 4.700.21.21402), X64 RyuJIT
 
 
 ```
-|                  Method |  N |     Mean |     Error |    StdDev |  Gen 0 | Gen 1 | Gen 2 | Allocated |
-|------------------------ |--- |---------:|----------:|----------:|-------:|------:|------:|----------:|
-| **&#39;Sum of Array equals 0&#39;** |  **2** | **1.979 μs** | **0.0385 μs** | **0.0443 μs** | **0.0114** |     **-** |     **-** |     **312 B** |
-| **&#39;Sum of Array equals 0&#39;** |  **3** | **1.983 μs** | **0.0389 μs** | **0.0583 μs** | **0.0114** |     **-** |     **-** |     **320 B** |
-| **&#39;Sum of Array equals 0&#39;** |  **4** | **2.005 μs** | **0.0348 μs** | **0.0372 μs** | **0.0114** |     **-** |     **-** |     **320 B** |
-| **&#39;Sum of Array equals 0&#39;** | **10** | **2.204 μs** | **0.0309 μs** | **0.0289 μs** | **0.0114** |     **-** |     **-** |     **344 B** |
-| **&#39;Sum of Array equals 0&#39;** | **20** | **2.652 μs** | **0.0505 μs** | **0.0472 μs** | **0.0114** |     **-** |     **-** |     **384 B** |
-| **&#39;Sum of Array equals 0&#39;** | **70** | **6.894 μs** | **0.1067 μs** | **0.0998 μs** | **0.0153** |     **-** |     **-** |     **584 B** |
+|         Method |   N | Mean | Error |
+|--------------- |---- |-----:|------:|
+|   **&#39;With array&#39;** |   **2** |   **NA** |    **NA** |
+| &#39;With HashSet&#39; |   2 |   NA |    NA |
+|   **&#39;With array&#39;** |   **3** |   **NA** |    **NA** |
+| &#39;With HashSet&#39; |   3 |   NA |    NA |
+|   **&#39;With array&#39;** |   **4** |   **NA** |    **NA** |
+| &#39;With HashSet&#39; |   4 |   NA |    NA |
+|   **&#39;With array&#39;** |  **10** |   **NA** |    **NA** |
+| &#39;With HashSet&#39; |  10 |   NA |    NA |
+|   **&#39;With array&#39;** |  **20** |   **NA** |    **NA** |
+| &#39;With HashSet&#39; |  20 |   NA |    NA |
+|   **&#39;With array&#39;** |  **70** |   **NA** |    **NA** |
+| &#39;With HashSet&#39; |  70 |   NA |    NA |
+|   **&#39;With array&#39;** | **100** |   **NA** |    **NA** |
+| &#39;With HashSet&#39; | 100 |   NA |    NA |
+
+Benchmarks with issues:
+  SumOfArray.'With array': DefaultJob [N=2]
+  SumOfArray.'With HashSet': DefaultJob [N=2]
+  SumOfArray.'With array': DefaultJob [N=3]
+  SumOfArray.'With HashSet': DefaultJob [N=3]
+  SumOfArray.'With array': DefaultJob [N=4]
+  SumOfArray.'With HashSet': DefaultJob [N=4]
+  SumOfArray.'With array': DefaultJob [N=10]
+  SumOfArray.'With HashSet': DefaultJob [N=10]
+  SumOfArray.'With array': DefaultJob [N=20]
+  SumOfArray.'With HashSet': DefaultJob [N=20]
+  SumOfArray.'With array': DefaultJob [N=70]
+  SumOfArray.'With HashSet': DefaultJob [N=70]
+  SumOfArray.'With array': DefaultJob [N=100]
+  SumOfArray.'With HashSet': DefaultJob [N=100]
