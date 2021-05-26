@@ -67,5 +67,22 @@ namespace Algorithms.Codility.CountingElements.PermCheck
 
             return 1;
         }
+
+        [Benchmark]
+        [ArgumentsSource(nameof(Data))]
+        public int ThirdTry(int[] A, int expected)
+        {
+            var map = new HashSet<int>();
+            for (int i = 0; i < A.Length; i++)
+                map.Add(A[i]);
+
+            for (int i = 1; i <= A.Length + 1; i++)
+            {
+                if (!map.Contains(i))
+                    return i;
+            }
+
+            return 1;
+        }
     }
 }

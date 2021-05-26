@@ -31,6 +31,16 @@ namespace Algorithms.Tests.Codility.CountingElements
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
+        [DynamicData(nameof(Data), DynamicDataSourceType.Method)]
+        public void ThirdTry(int[] A, int expected)
+        {
+            var solution = new Algorithms.Codility.CountingElements.PermCheck.PermCheck();
+            var actual = solution.ThirdTry(A, expected);
+
+            Assert.AreEqual(expected, actual);
+        }
+
         public static IEnumerable<object[]> Data()
         {
             var solution = new Algorithms.Codility.CountingElements.PermCheck.PermCheck();
