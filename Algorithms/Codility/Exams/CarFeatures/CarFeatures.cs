@@ -90,5 +90,56 @@ namespace Algorithms.Codility.Exams.CarFeatures
 
             return similarCars;
         }
+
+        [Benchmark]
+        [ArgumentsSource(nameof(Data))]
+        public int[] ThirdTry(string[] cars)
+        {
+            var carFeats = new int[cars.Length];
+            for (int car = 0; car < cars.Length; car++)
+            {
+                carFeats[car] = Convert.ToInt32(cars[car], 2);
+            }
+
+            int[] similarCars = new int[carFeats.Length];
+            { // O(n^2)
+              // Could be O(n log n) if j-loop started on i+1,
+              // but later would have to increment j and i similarCar.
+                for (int i = 0; i < similarCars.Length; i++)
+                    for (int j = 0; j < similarCars.Length; j++)
+                    {
+                        // Skip the same car
+                        if (i == j)
+                        {
+                            continue;
+                        }
+
+                        // XOR both cars.
+                        // The bits left signed, are the ones that are not equal
+                        var aux = carFeats[i] ^ carFeats[j];
+
+                        // Count signed bits
+                        int changes = 0;
+                        while (aux > 0)
+                        {
+                            if ((aux & 1) == 1)
+                            {
+                                changes++;
+                            }
+
+                            aux >>= 1;
+                        }
+
+                        // Validate if they are similar or not
+                        if (changes <= 1)
+                        {
+                            similarCars[i]++;
+                        }
+                    }
+            }
+
+
+            return similarCars;
+        }
     }
 }
